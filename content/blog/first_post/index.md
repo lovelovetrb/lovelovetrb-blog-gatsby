@@ -4,7 +4,7 @@ date: "2022-09-25"
 description: "Hello World"
 tags: ['first_post']
 icon: '👍'
-color: '#607d8b'
+color: '#f8bbd0'
 publish: true
 ---
 
