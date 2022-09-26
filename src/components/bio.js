@@ -48,11 +48,11 @@ const Bio = () => {
       <h3 className="name url"><a href="https://lovelovetrb.github.io/" target="_blank" rel="noopener noreferrer">{author.name}</a></h3>
       <p className="textarea">{author?.summary || null}</p>
       <hr style={{ margin: '10px' }} />
-      <p>Follow Me!</p>
+      <h4>Contact Me!</h4>
       <div style={{
         display: 'flex',
         justifyContent: 'center',
-        marginTop: '10px'
+        marginTop: '10px',
       }}>
         <p style={{ margin: '2.5px', fontSize: '2rem' }}>
           <a href={`https://twitter.com/${social?.twitter || ``}`} target="_blank" rel="noopener noreferrer">
@@ -65,7 +65,7 @@ const Bio = () => {
           </a>
         </p>
       </div>
-    </div>
+    </div >
   )
 }
 
