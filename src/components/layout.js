@@ -15,6 +15,8 @@ const Layout = ({ location, title, children }) => {
     marginLeft: '.3rem'
   }
 
+  console.log(location.href)
+
   const header =
     (<>
       <div className="title">
@@ -105,17 +107,17 @@ const Layout = ({ location, title, children }) => {
               <FontAwesomeIcon icon={faTwitterSquare} />
             </i>
           </a>
-          <a className="sns__facebook" href="http://www.facebook.com/share.php?u=<?php echo get_the_permalink(); ?>" target="_blank" rel="nofollow noopener">
+          <a className="sns__facebook" href={`http://www.facebook.com/share.php?u=${location.href}`} target="_blank" rel="nofollow noopener">
             <i>
               <FontAwesomeIcon icon={faFacebookSquare} />
             </i>
           </a>
-          <a className="sns__pocket" href="http://getpocket.com/edit?url=<?php echo get_the_permalink();?>&title=<?php echo get_the_title(); ?>" target="_blank" rel="nofollow noopener">
+          <a className="sns__pocket" href={`http://getpocket.com/edit?url=${location.href}&title${title}`} target="_blank" rel="nofollow noopener">
             <i>
               <FontAwesomeIcon icon={faGetPocket} />
             </i>
           </a>
-          <a className="sns__line" href="https://social-plugins.line.me/lineit/share?url=<?php echo get_the_permalink(); ?>" target="_blank" rel="nofollow noopener">
+          <a className="sns__line" href={`https://social-plugins.line.me/lineit/share?url=${location.href}`} target="_blank" rel="nofollow noopener">
             <i className="fab fa-line">
               <FontAwesomeIcon icon={faLine} />
             </i>
