@@ -15,7 +15,7 @@ const Layout = ({ location, title, children }) => {
     marginLeft: '.3rem'
   }
 
-  console.log(location.href)
+  console.log(location)
 
   const header =
     (<>
@@ -102,7 +102,7 @@ const Layout = ({ location, title, children }) => {
       <div className="shere">
         <h3 className="mobile">Please Shere This Page!</h3>
         <div className="shere-btn">
-          <a className="sns__twitter" href={`https://twitter.com/share?url=${location.href}&text=${title}`} target="_blank" rel="nofollow noopener">
+          <a className="sns__twitter" href={`http://twitter.com/share?url=${location.href}&text=${title}&hashtags=risunote`} target="_blank" rel="nofollow noopener">
             <i>
               <FontAwesomeIcon icon={faTwitterSquare} />
             </i>
