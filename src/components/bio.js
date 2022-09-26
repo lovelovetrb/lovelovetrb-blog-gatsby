@@ -8,6 +8,8 @@
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faTwitterSquare, faGithubSquare } from "@fortawesome/free-brands-svg-icons"
 
 const Bio = () => {
   const data = useStaticQuery(graphql`
@@ -20,6 +22,7 @@ const Bio = () => {
           }
           social {
             twitter
+            github
           }
         }
       }
@@ -31,26 +34,37 @@ const Bio = () => {
   const social = data.site.siteMetadata?.social
 
   return (
-    <div className="bio">
+    <div className="side-card text-center stycky">
       <StaticImage
-        className="bio-avatar"
+        className="icon"
         layout="fixed"
         formats={["auto", "webp", "avif"]}
-        src="../images/profile-pic.png"
-        width={50}
-        height={50}
+        src="../images/icon.jpg"
+        width={100}
+        height={100}
         quality={95}
         alt="Profile picture"
       />
-      {author?.name && (
-        <p>
-          Written by <strong>{author.name}</strong> {author?.summary || null}
-          {` `}
-          <a href={`https://twitter.com/${social?.twitter || ``}`}>
-            You should follow them on Twitter
+      <h3 className="name url"><a href="https://lovelovetrb.github.io/" target="_blank" rel="noopener noreferrer">{author.name}</a></h3>
+      <p className="textarea">{author?.summary || null}</p>
+      <hr style={{ margin: '10px' }} />
+      <p>Follow Me!</p>
+      <div style={{
+        display: 'flex',
+        justifyContent: 'center',
+        marginTop: '10px'
+      }}>
+        <p style={{ margin: '2.5px', fontSize: '2rem' }}>
+          <a href={`https://twitter.com/${social?.twitter || ``}`} target="_blank" rel="noopener noreferrer">
+            <FontAwesomeIcon icon={faTwitterSquare} />
           </a>
         </p>
-      )}
+        <p style={{ margin: '2.5px', fontSize: '2rem' }}>
+          <a href={`https://github.com/${social?.github || ``}`} target="_blank" rel="noopener noreferrer">
+            <FontAwesomeIcon icon={faGithubSquare} />
+          </a>
+        </p>
+      </div>
     </div>
   )
 }

@@ -1,0 +1,52 @@
+.breadcrumb {
+    color: var(--text-color);
+    font-family: 'Silkscreen', cursive;
+}
+
+.breadcrumb ol {
+    align-items: center;
+    margin-bottom: .5rem !important;
+}
+
+.content {
+    border-radius: 20px;
+    background-color: var(--text-color);
+    color: var(--paragrah);
+    padding: 1rem 3rem 3rem;
+}
+
+.article-data {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+}
+
+.article-data p {
+    margin-left: 5px;
+    margin-right: 10px;
+}
+
+.article-data-publish-time {
+    display: flex;
+    align-items: flex-end;
+}
+
+.article-title {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.sentence {
+    line-height: 1.8;
+    margin-top: 1rem;
+}
+
+.previous-post {
+    width: 50%;
+    text-align: left;
+}
+
+.next-post {
+    width: 50%;
+    text-align: right;
+}

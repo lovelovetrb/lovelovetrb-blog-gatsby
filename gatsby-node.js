@@ -6,6 +6,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   // Define a template for blog post
   const blogPost = path.resolve(`./src/templates/blog-post.js`)
+  const tagTemplate = path.resolve("src/templates/tagPage.js")
+
 
   // Get all markdown blog posts sorted by date
   const result = await graphql(
@@ -20,8 +22,18 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             fields {
               slug
             }
+            frontmatter{
+              tags
+              publish
+              title
+            }
           }
         }
+        tagsGroup: allMarkdownRemark(limit: 2000) {
+            group(field: frontmatter___tags) {
+              fieldValue
+            }
+          }
       }
     `
   )
@@ -35,6 +47,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   }
 
   const posts = result.data.allMarkdownRemark.nodes
+  // Extract tag data from query
+  const tags = result.data.tagsGroup.group
 
   // Create blog posts pages
   // But only if there's at least one markdown file found at "content/blog" (defined in gatsby-config.js)
@@ -42,8 +56,52 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   if (posts.length > 0) {
     posts.forEach((post, index) => {
-      const previousPostId = index === 0 ? null : posts[index - 1].id
-      const nextPostId = index === posts.length - 1 ? null : posts[index + 1].id
+      // 
+      if (!post.frontmatter.publish
+        && process.env.NODE_ENV === 'production'
+      ) {
+        console.log(`Page SKIP  :[${post.frontmatter.title}]`);
+        return;
+      }
+
+      let previousPost = index === 0 ? null : posts[index - 1]
+      let nextPost = index === posts.length - 1 ? null : posts[index + 1]
+
+      // Skip Logic
+      let i = index
+
+      if (previousPost !== null) {
+        while (!previousPost.frontmatter.publish) {
+          if (i === 0) {
+            previousPost = null
+            break
+          }
+          i--
+          previousPost = posts[i]
+          if (previousPost === null) { break }
+        }
+      }
+
+      i = index
+
+      if (nextPost !== null) {
+        while (nextPost.frontmatter.publish === false) {
+          i++
+          if (i === posts.length) {
+            nextPost = null
+            break
+          }
+          nextPost = posts[i]
+          if (nextPost === null) {
+            break
+          }
+        }
+      }
+
+      // Skip Logic End
+
+      let previousPostId = previousPost === null ? null : previousPost.id
+      let nextPostId = nextPost === null ? null : nextPost.id
 
       createPage({
         path: post.fields.slug,
@@ -54,6 +112,23 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           nextPostId,
         },
       })
+
+      // Make tag pages
+      tags.forEach(tag => {
+        if (!post.frontmatter.publish
+          && process.env.NODE_ENV === 'production') {
+          console.log(`Page SKIP  :[${post.frontmatter.title}]`);
+          return;
+        }
+        createPage({
+          path: `/tags/${tag.fieldValue}/`,
+          component: tagTemplate,
+          context: {
+            tag: tag.fieldValue,
+          },
+        })
+      })
+
     })
   }
 }
@@ -95,6 +170,7 @@ exports.createSchemaCustomization = ({ actions }) => {
 
     type Social {
       twitter: String
+      github: String
     }
 
     type MarkdownRemark implements Node {
@@ -106,6 +182,9 @@ exports.createSchemaCustomization = ({ actions }) => {
       title: String
       description: String
       date: Date @dateformat
+      icon: String
+      color: String
+      publish: Boolean
     }
 
     type Fields {

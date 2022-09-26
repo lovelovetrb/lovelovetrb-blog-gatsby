@@ -1,17 +1,43 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `RISU NOTE`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Mizuki`,
+      summary: `POEPOE infomatic university student`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
+    description: `情報を学ぶ大学生 Mizuki による趣味を詰め込んだブログです / this page is Mizuki's first blog page`,
+    // add site url↓
+    siteUrl: `https://risu-note.com`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `lovelovetrb`,
+      github: 'lovelovetrb'
     },
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-breadcrumb`,
+      options: {
+        useAutoGen: true,
+        autoGenHomeLabel: `Home`
+      },
+    },
+    {
+      resolve: `gatsby-omni-font-loader`,
+      options: {
+        enableListener: true,
+        preconnect: [`https://fonts.googleapis.com`, `https://fonts.gstatic.com`],
+        web: [
+          {
+            name: `Silkscreen`,
+            file: `https://fonts.googleapis.com/css2?family=Silkscreen&display=swap`,
+          },
+          {
+            name: `Kiwi Maru`,
+            file: `https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap`,
+          },
+        ],
+      },
+    },
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -31,6 +57,9 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          {
+            resolve: 'gatsby-remark-prismjs-title',
+          },
           {
             resolve: `gatsby-remark-images`,
             options: {
@@ -99,7 +128,7 @@ module.exports = {
               }
             `,
             output: "/rss.xml",
-            title: "Gatsby Starter Blog RSS Feed",
+            title: "RISU NOTE RSS Feed",
           },
         ],
       },
@@ -107,15 +136,15 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `RISU NOTE`,
+        short_name: `RISU NOTE`,
         start_url: `/`,
         background_color: `#ffffff`,
         // This will impact how browsers show your PWA/website
         // https://css-tricks.com/meta-theme-color-and-trickery/
         // theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/favicon.png`, // This path is relative to the root of the site.
       },
     },
   ],
