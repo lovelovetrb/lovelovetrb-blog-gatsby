@@ -270,15 +270,6 @@ aside {
   padding-left: 2rem;
 }
 
-/*
- ARTICLE
-================================================ */
-.sentence h2,
-.sentence h3,
-.sentence h4 {
-  border-bottom: solid 3px var(--main-background);
-  margin-bottom: 1rem;
-}
 
 /*
 FOOTER

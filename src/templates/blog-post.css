@@ -36,9 +36,31 @@
     margin: 2rem 0;
 }
 
+/*
+ SENTENCE
+================================================ */
+.sentence h2,
+.sentence h3,
+.sentence h4 {
+    border-bottom: solid 3px var(--main-background);
+    margin: 1rem 0;
+}
+
 .sentence {
-    line-height: 1.8;
+    line-height: 1.9;
     margin-top: 1rem;
+}
+
+.sentence p+p {
+    margin-top: 3rem;
+}
+
+.sentence>p {
+    white-space: pre-wrap;
+}
+
+.sentence>p * {
+    white-space: normal;
 }
 
 .previous-post {
