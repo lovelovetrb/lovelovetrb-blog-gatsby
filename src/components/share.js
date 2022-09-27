@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faFacebookSquare, faGetPocket, faTwitterSquare, faLine, } from "@fortawesome/free-brands-svg-icons"
 import { useStaticQuery, graphql } from "gatsby"
+import { isMobile } from 'react-device-detect'
 
 export const Share = ({ location }) => {
 
@@ -23,26 +24,22 @@ export const Share = ({ location }) => {
         }
     `)
 
-    let uaData = false
-    useEffect(() => {
-        uaData = navigator.userAgentData.mobile;
-    }, [])
-
     const shareData = {
         title: site.siteMetadata?.title,
         text: site.siteMetadata?.description,
         url: markdownRemark.frontmatter.title
 
     }
+
     const onClickShareButton = async () => {
-        if (navigator.canShare) {
+        if (navigator?.canShare) {
             await navigator.share(shareData);
         } else {
             alert(`Your system doesn't support sharing System`)
         }
     }
-
-    if (uaData) {
+    console.log(isMobile)
+    if (isMobile) {
         return (
             <div className="shere">
                 <h3>Please Shere This Page!</h3>
