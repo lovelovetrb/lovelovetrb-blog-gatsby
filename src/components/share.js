@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faFacebookSquare, faGetPocket, faTwitterSquare, faLine, } from "@fortawesome/free-brands-svg-icons"
 import { useStaticQuery, graphql } from "gatsby"
@@ -23,7 +23,11 @@ export const Share = ({ location }) => {
         }
     `)
 
-    const uaData = navigator.userAgentData.mobile;
+    let uaData
+    useEffect(() => {
+        uaData = navigator.userAgentData.mobile;
+    })
+
     const shareData = {
         title: site.siteMetadata?.title,
         text: site.siteMetadata?.description,
