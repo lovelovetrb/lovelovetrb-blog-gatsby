@@ -154,6 +154,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
 }
 
 /*
@@ -286,6 +287,8 @@ FOOTER
 footer {
   font-family: 'Silkscreen', cursive;
   color: var(--text-color);
+  position: absolute;
+  width: 100vw;
   bottom: 0;
   background-color: var(--main-background);
   border-radius: 40px 40px 0 0;
