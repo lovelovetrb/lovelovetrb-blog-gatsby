@@ -2,8 +2,8 @@ import * as React from "react"
 import { Link } from "gatsby"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faAngleUp, faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons"
-import { faFacebookSquare, faGetPocket, faTwitterSquare, faLine, } from "@fortawesome/free-brands-svg-icons"
 import Bio from "./bio"
+import { Share } from "./share"
 
 // 全体に共通するレイアウトを定義する
 // <Layout>コンポーネントを呼べば良い
@@ -14,8 +14,6 @@ const Layout = ({ location, title, children }) => {
     fontSize: '1rem',
     marginLeft: '.3rem'
   }
-
-  console.log(location)
 
   const header =
     (<>
@@ -99,31 +97,7 @@ const Layout = ({ location, title, children }) => {
         <main>{children}</main>
         <aside><Bio /></aside>
       </div>
-      <div className="shere">
-        <h3 className="mobile">Please Shere This Page!</h3>
-        <div className="shere-btn">
-          <a className="sns__twitter" href={`http://twitter.com/share?url=${location.href}&text=${title}&hashtags=risunote`} target="_blank" rel="nofollow noopener">
-            <i>
-              <FontAwesomeIcon icon={faTwitterSquare} />
-            </i>
-          </a>
-          <a className="sns__facebook" href={`http://www.facebook.com/share.php?u=${location.href}`} target="_blank" rel="nofollow noopener">
-            <i>
-              <FontAwesomeIcon icon={faFacebookSquare} />
-            </i>
-          </a>
-          <a className="sns__pocket" href={`http://getpocket.com/edit?url=${location.href}&title${title}`} target="_blank" rel="nofollow noopener">
-            <i>
-              <FontAwesomeIcon icon={faGetPocket} />
-            </i>
-          </a>
-          <a className="sns__line" href={`https://social-plugins.line.me/lineit/share?url=${location.href}`} target="_blank" rel="nofollow noopener">
-            <i className="fab fa-line">
-              <FontAwesomeIcon icon={faLine} />
-            </i>
-          </a>
-        </div>
-      </div>
+      <Share location={location} />
       <footer>{footer}</footer>
     </div>
   )

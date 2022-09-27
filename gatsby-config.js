@@ -1,13 +1,12 @@
 module.exports = {
   siteMetadata: {
-    title: `RISU NOTE`,
+    title: `Risu Note`,
     author: {
       name: `Mizuki`,
       summary: `POEPOE infomatic university student`,
     },
-    description: `情報を学ぶ大学生 Mizuki による趣味を詰め込んだブログです / this page is Mizuki's first blog page`,
-    // add site url↓
-    siteUrl: `https://risu-note.com`,
+    description: `Risu Note | 情報系大学生のブログ`,
+    siteUrl: `https://risu-note.net`,
     social: {
       twitter: `lovelovetrb`,
       github: 'lovelovetrb'
@@ -142,13 +141,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `RISU NOTE`,
-        short_name: `RISU NOTE`,
+        name: `Risu Note`,
+        short_name: `Risu Note`,
         start_url: `/`,
-        background_color: `#ffffff`,
+        background_color: `#d8eefe`,
         // This will impact how browsers show your PWA/website
         // https://css-tricks.com/meta-theme-color-and-trickery/
-        // theme_color: `#663399`,
+        theme_color: `#1b73a5`,
         display: `minimal-ui`,
         icon: `src/images/favicon.png`, // This path is relative to the root of the site.
       },

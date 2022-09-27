@@ -5,7 +5,7 @@ COMMON
 ================================================ */
 :root {
   --background: #d8eefe;
-  --main-background: rgb(27, 115, 165);
+  --main-background: #1b73a5;
   --paragraph: #5f6c7b;
   --button: rgb(27, 115, 165);
   --button-text: #fffffe;
@@ -56,7 +56,7 @@ hr {
   color: var(--paragraph);
 }
 
-.shere-btn {
+.shere-btn-desktop {
   font-size: 35px;
   color: var(--button);
   position: fixed;
@@ -66,8 +66,17 @@ hr {
   left: 10px;
 }
 
-.shere-btn i {
+.shere-btn-desktop i {
   padding: .5rem 0;
+}
+
+.share-btn-mobile {
+  margin-top: 1rem;
+  padding: .5rem;
+  width: 80%;
+  border: 3px solid var(--accent-color);
+  background-color: rgba(252, 140, 138, .15);
+  border-radius: 10px;
 }
 
 .file::after {
@@ -114,10 +123,6 @@ body {
   bottom: 50px;
   right: 50px;
   z-index: 50;
-}
-
-.mobile {
-  display: none;
 }
 
 /*
