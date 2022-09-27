@@ -26,7 +26,7 @@ export const Share = ({ location }) => {
     let uaData
     useEffect(() => {
         uaData = navigator.userAgentData.mobile;
-    })
+    }, [])
 
     const shareData = {
         title: site.siteMetadata?.title,
@@ -34,6 +34,7 @@ export const Share = ({ location }) => {
         url: markdownRemark.frontmatter.title
 
     }
+    
     const onClickShareButton = async () => {
         if (navigator.canShare) {
             await navigator.share(shareData);
