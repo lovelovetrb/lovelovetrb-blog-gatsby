@@ -38,7 +38,7 @@ export const Share = ({ location }) => {
             alert(`Your system doesn't support sharing System`)
         }
     }
-    console.log(isMobile)
+
     if (isMobile) {
         return (
             <div className="shere">
