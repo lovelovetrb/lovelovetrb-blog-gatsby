@@ -10,6 +10,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faTwitterSquare, faGithubSquare } from "@fortawesome/free-brands-svg-icons"
+import { faHouse } from "@fortawesome/free-solid-svg-icons"
 
 const Bio = () => {
   const data = useStaticQuery(graphql`
@@ -52,8 +53,14 @@ const Bio = () => {
       <div style={{
         display: 'flex',
         justifyContent: 'center',
+        alignItems: 'center',
         marginTop: '10px',
       }}>
+        <p style={{ margin: '2.5px', fontSize: '1.6rem' }}>
+          <a href={`https://lovelovetrb.github.io`} target="_blank" rel="noopener noreferrer">
+            <FontAwesomeIcon icon={faHouse} />
+          </a>
+        </p>
         <p style={{ margin: '2.5px', fontSize: '2rem' }}>
           <a href={`https://twitter.com/${social?.twitter || ``}`} target="_blank" rel="noopener noreferrer">
             <FontAwesomeIcon icon={faTwitterSquare} />

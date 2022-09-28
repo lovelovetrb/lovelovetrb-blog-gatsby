@@ -12,7 +12,7 @@ const Layout = ({ location, title, children }) => {
   const isRootPath = location.pathname === rootPath
   const iconStyle = {
     fontSize: '1rem',
-    marginLeft: '.3rem'
+    margin: ' 0 .3rem'
   }
 
   const header =
@@ -77,7 +77,7 @@ const Layout = ({ location, title, children }) => {
       <div className="copyright">
         <p>© {new Date().getFullYear()},  Mizuki.</p>
         <p>The content and code of this page was written by
-          <a href="https://lovelovetrb.github.io/" target="_blank" rel="noopener noreferrer" style={{ marginLeft: '5px' }}>
+          <a href="https://twitter.com/lovelovetrb" target="_blank" rel="noopener noreferrer" style={{ marginLeft: '5px' }}>
             @lovelovetrb
             <FontAwesomeIcon icon={faArrowUpRightFromSquare} style={iconStyle} />
           </a>
@@ -85,6 +85,8 @@ const Layout = ({ location, title, children }) => {
           Built with
           {` `}
           <a href="https://www.gatsbyjs.com">Gatsby<FontAwesomeIcon icon={faArrowUpRightFromSquare} style={iconStyle} /></a>
+          and&nbsp;
+          <a href="https://github.com/lovelovetrb/lovelovetrb-blog-gatsby">code is here<FontAwesomeIcon icon={faArrowUpRightFromSquare} style={iconStyle} /></a>
         </p>
       </div>
     </>)

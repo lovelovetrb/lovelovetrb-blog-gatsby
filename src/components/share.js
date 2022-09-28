@@ -31,7 +31,6 @@ export const Share = ({ location }) => {
         title: `${markdownRemark.frontmatter.title} | ${site.siteMetadata?.title}`,
         text: `${markdownRemark.frontmatter.title} | ${site.siteMetadata?.title}`,
         url: `${site.siteMetadata?.siteUrl}${markdownRemark.fields.slug}`,
-
     }
     console.log(shareData)
     const onClickShareButton = async () => {
