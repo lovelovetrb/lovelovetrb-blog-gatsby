@@ -32,7 +32,7 @@ export const Share = ({ location }) => {
         text: `${markdownRemark.frontmatter.title} | ${site.siteMetadata?.title}`,
         url: `${site.siteMetadata?.siteUrl}${markdownRemark.fields.slug}`,
     }
-    console.log(shareData)
+
     const onClickShareButton = async () => {
         if (navigator?.canShare) {
             await navigator.share(shareData);

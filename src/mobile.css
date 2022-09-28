@@ -71,10 +71,6 @@
         width: 25vw;
     }
 
-    .card {
-        width: 100%;
-    }
-
     .container {
         flex-direction: column;
         align-items: center;
