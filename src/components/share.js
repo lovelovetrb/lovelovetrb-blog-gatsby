@@ -9,28 +9,31 @@ export const Share = ({ location }) => {
     const { site, markdownRemark } = useStaticQuery(
         graphql`
         query {
-        markdownRemark {
-            frontmatter {
-            title
+            markdownRemark {
+                frontmatter {
+                title
+                }
+                fields {
+                slug
+                }
             }
-        }
-        site {
-            siteMetadata {
-            description
-            siteUrl
-            title
+            site {
+                siteMetadata {
+                description
+                siteUrl
+                title
+                }
             }
-        }
         }
     `)
 
     const shareData = {
-        title: site.siteMetadata?.title,
-        text: site.siteMetadata?.description,
-        url: markdownRemark.frontmatter.title
+        title: `${markdownRemark.frontmatter.title} | ${site.siteMetadata?.title}`,
+        text: `${markdownRemark.frontmatter.title} | ${site.siteMetadata?.title}`,
+        url: `${site.siteMetadata?.siteUrl}${markdownRemark.fields.slug}`,
 
     }
-
+    console.log(shareData)
     const onClickShareButton = async () => {
         if (navigator?.canShare) {
             await navigator.share(shareData);
