@@ -1,4 +1,4 @@
-import * as React from "react"
+import React, { useEffect, useState } from "react"
 import { Link } from "gatsby"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faAngleUp, faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons"
@@ -15,6 +15,8 @@ const Layout = ({ location, title, children }) => {
     marginLeft: '.3rem',
     marginRight: '.6rem'
   }
+
+
 
   const header =
     (<>

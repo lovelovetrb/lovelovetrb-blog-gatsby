@@ -17,6 +17,7 @@ const Seo = ({ description, lang, title, children }) => {
           siteMetadata {
             title
             description
+            siteUrl
             social {
               twitter
               github
@@ -37,6 +38,7 @@ const Seo = ({ description, lang, title, children }) => {
       <meta property="og:title" content={title} />
       <meta property="og:description" content={metaDescription} />
       <meta property="og:type" content="website" />
+      <meta property="og:img" content={`${site.siteMetadata?.siteUrl}/images/tube.jpg`} />
       <meta name="twitter:card" content="summary" />
       <meta
         name="twitter:creator"

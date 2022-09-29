@@ -5,7 +5,6 @@ import { useStaticQuery, graphql } from "gatsby"
 import { isMobile } from 'react-device-detect'
 
 export const Share = ({ location }) => {
-
     const { site, markdownRemark } = useStaticQuery(
         graphql`
         query {
@@ -27,19 +26,26 @@ export const Share = ({ location }) => {
         }
     `)
 
-    const shareData = {
-        title: `${markdownRemark.frontmatter.title} | ${site.siteMetadata?.title}`,
-        text: `${markdownRemark.frontmatter.title} | ${site.siteMetadata?.title}`,
-        url: `${site.siteMetadata?.siteUrl}${markdownRemark.fields.slug}`,
-    }
+    const [shareData, setShareData] = useState('')
+
+    useEffect(() => {
+        const shareData = {
+            title: site.siteMetadata?.title,
+            text: site.siteMetadata?.title,
+            url: location.href,
+        }
+        setShareData(shareData)
+    }, [])
 
     const onClickShareButton = async () => {
+        console.log(shareData)
         if (navigator?.canShare) {
             await navigator.share(shareData);
         } else {
             alert(`Your system doesn't support sharing System`)
         }
     }
+
 
     if (isMobile) {
         return (
@@ -52,7 +58,7 @@ export const Share = ({ location }) => {
         return (
             <div className="shere">
                 <div className="shere-btn-desktop">
-                    <a className="sns__twitter" href={`http://twitter.com/share?url=${location.href}&text=${markdownRemark.frontmatter.title} | ${site.siteMetadata?.title}&hashtags=risunote`} target="_blank" rel="nofollow noopener">
+                    <a className="sns__twitter" href={`http://twitter.com/share?url=${location.href}&text=${site.siteMetadata?.title}&hashtags=risunote`} target="_blank" rel="nofollow noopener">
                         <i>
                             <FontAwesomeIcon icon={faTwitterSquare} />
                         </i>
@@ -62,7 +68,7 @@ export const Share = ({ location }) => {
                             <FontAwesomeIcon icon={faFacebookSquare} />
                         </i>
                     </a>
-                    <a className="sns__pocket" href={`http://getpocket.com/edit?url=${location.href}&title=${markdownRemark.frontmatter.title} | ${site.siteMetadata?.title}`} target="_blank" rel="nofollow noopener">
+                    <a className="sns__pocket" href={`http://getpocket.com/edit?url=${location.href}&title=${site.siteMetadata?.title}`} target="_blank" rel="nofollow noopener">
                         <i>
                             <FontAwesomeIcon icon={faGetPocket} />
                         </i>
@@ -76,6 +82,5 @@ export const Share = ({ location }) => {
             </div>
         )
     }
-
-
 }
+

@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import Layout from "../components/layout"
+import Seo from "../components/seo"
 
 //  Breadcrumb
 import { Breadcrumb } from 'gatsby-plugin-breadcrumb'
@@ -8,6 +9,7 @@ import 'gatsby-plugin-breadcrumb/gatsby-plugin-breadcrumb.css'
 
 // Components
 import { Link, graphql } from "gatsby"
+import { Share } from "../components/share"
 
 const TagsPage = ({
     data: {
@@ -65,6 +67,8 @@ const TagsPage = ({
 }
 
 export default TagsPage
+
+export const Head = () => <Seo title="tags" />
 
 export const pageQuery = graphql`
   query {

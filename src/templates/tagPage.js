@@ -5,6 +5,7 @@ import PropTypes from "prop-types"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import { Eyecatch } from "../components/eyecatch"
+import Seo from "../components/seo"
 
 // Breadcrumb
 import { Breadcrumb } from 'gatsby-plugin-breadcrumb'
@@ -13,6 +14,7 @@ import 'gatsby-plugin-breadcrumb/gatsby-plugin-breadcrumb.css'
 // FontAwesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faTag } from "@fortawesome/free-solid-svg-icons"
+
 
 const tagPage = ({ pageContext, data, location }) => {
     const { tag } = pageContext
@@ -37,7 +39,7 @@ const tagPage = ({ pageContext, data, location }) => {
                         const { title, description } = node.frontmatter
                         const color = node.frontmatter.color || '#B3E5FC'
                         const icon = node.frontmatter.icon || '🔍'
-                        
+
                         return (
                             <li className="card">
                                 <Link to={slug} itemProp='url'>
@@ -90,6 +92,11 @@ tagPage.propTypes = {
 }
 
 export default tagPage
+
+export const Head = ({ pageContext }) => {
+    const { tag } = pageContext
+    return (<Seo title={`#${tag}`} />)
+}
 
 export const pageQuery = graphql`
   query($tag: String) {

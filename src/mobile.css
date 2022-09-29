@@ -19,6 +19,10 @@
         padding-bottom: 30px;
     }
 
+    .card {
+        width: 100%;
+    }
+
     footer {
         padding-top: 30px;
     }
