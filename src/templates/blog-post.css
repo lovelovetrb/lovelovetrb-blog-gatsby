@@ -64,10 +64,15 @@
     white-space: normal;
 }
 
-.previous-post {
+.previous-post,
+.next-post {
+    width: 100%;
+}
+
+.previous-post p {
     text-align: left;
 }
 
-.next-post {
+.next-post p {
     text-align: right;
 }
