@@ -9,7 +9,6 @@ import 'gatsby-plugin-breadcrumb/gatsby-plugin-breadcrumb.css'
 
 // Components
 import { Link, graphql } from "gatsby"
-import { Share } from "../components/share"
 
 const TagsPage = ({
     data: {

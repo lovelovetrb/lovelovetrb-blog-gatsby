@@ -5,17 +5,9 @@ import { useStaticQuery, graphql } from "gatsby"
 import { isMobile } from 'react-device-detect'
 
 export const Share = ({ location }) => {
-    const { site, markdownRemark } = useStaticQuery(
+    const { site } = useStaticQuery(
         graphql`
         query {
-            markdownRemark {
-                frontmatter {
-                title
-                }
-                fields {
-                slug
-                }
-            }
             site {
                 siteMetadata {
                 description
@@ -31,7 +23,6 @@ export const Share = ({ location }) => {
     useEffect(() => {
         const shareData = {
             title: site.siteMetadata?.title,
-            text: site.siteMetadata?.title,
             url: location.href,
         }
         setShareData(shareData)
@@ -58,22 +49,22 @@ export const Share = ({ location }) => {
         return (
             <div className="shere">
                 <div className="shere-btn-desktop">
-                    <a className="sns__twitter" href={`http://twitter.com/share?url=${location.href}&text=${site.siteMetadata?.title}&hashtags=risunote`} target="_blank" rel="nofollow noopener">
+                    <a className="sns__twitter" href={`http://twitter.com/share?url=${location.href}&text=${site.siteMetadata?.title}&hashtags=risunote`} target="_blank" rel="noreferrer">
                         <i>
                             <FontAwesomeIcon icon={faTwitterSquare} />
                         </i>
                     </a>
-                    <a className="sns__facebook" href={`http://www.facebook.com/share.php?u=${location.href}`} target="_blank" rel="nofollow noopener">
+                    <a className="sns__facebook" href={`http://www.facebook.com/share.php?u=${location.href}`} target="_blank" rel="noreferrer">
                         <i>
                             <FontAwesomeIcon icon={faFacebookSquare} />
                         </i>
                     </a>
-                    <a className="sns__pocket" href={`http://getpocket.com/edit?url=${location.href}&title=${site.siteMetadata?.title}`} target="_blank" rel="nofollow noopener">
+                    <a className="sns__pocket" href={`http://getpocket.com/edit?url=${location.href}&title=${site.siteMetadata?.title}`} target="_blank" rel="noreferrer">
                         <i>
                             <FontAwesomeIcon icon={faGetPocket} />
                         </i>
                     </a>
-                    <a className="sns__line" href={`https://social-plugins.line.me/lineit/share?url=${location.href}`} target="_blank" rel="nofollow noopener">
+                    <a className="sns__line" href={`https://social-plugins.line.me/lineit/share?url=${location.href}`} target="_blank" rel="noreferrer">
                         <i>
                             <FontAwesomeIcon icon={faLine} />
                         </i>

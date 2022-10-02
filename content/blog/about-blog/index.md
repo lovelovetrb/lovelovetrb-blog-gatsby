@@ -2,7 +2,7 @@
 title: このブログの仕様について
 date: "2022-10-02"
 description: "このブログで使用した技術について説明しています"
-tags: ['tech','gatsby','react']
+tags: ['tech']
 color: '#fdeff2'
 icon: '🧑🏻‍💻'
 publish:  true

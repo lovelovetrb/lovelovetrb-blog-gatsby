@@ -4,7 +4,6 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { Eyecatch } from "../components/eyecatch"
-import { Share } from "../components/share"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faClock } from "@fortawesome/free-solid-svg-icons"
@@ -23,7 +22,8 @@ const BlogPostTemplate = ({
   } = pageContext
   const tagStyle = {
     fontFamily: 'Silkscreen, cursive',
-    fontSize: '1.2rem'
+    fontSize: '1.2rem',
+    marginTop: '1rem'
   }
 
   const color = post.frontmatter.color || '#B3E5FC'
@@ -53,14 +53,13 @@ const BlogPostTemplate = ({
           </div>
           {isPublish || (<p>{`pubulish : ${isPublish}`}</p>)}
           <div style={tagStyle}>
-            tags:
             {post.frontmatter.tags.map((tag) => {
               return (
-                <>
+                <p>
                   <Link to={`/tags/${tag}`} style={{ margin: '0 3px' }}>
                     #{tag || 'none'}
                   </Link>
-                </>
+                </p>
               )
             })}
           </div>
