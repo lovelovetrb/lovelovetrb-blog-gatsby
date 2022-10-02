@@ -6,11 +6,12 @@ module.exports = {
       summary: `POEPOE infomatic university student`,
     },
     description: `Risu Note | 情報系大学生のブログ`,
-    siteUrl: `https://risu-note.net`,
+    siteUrl: `https://risu-note.net/`,
     social: {
       twitter: `lovelovetrb`,
       github: 'lovelovetrb'
     },
+    cardImage: `src/images/card.jpg`,
   },
   plugins: [
     {

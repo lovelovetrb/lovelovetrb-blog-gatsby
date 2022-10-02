@@ -22,6 +22,7 @@ const Seo = ({ description, lang, title, children }) => {
               twitter
               github
             }
+            cardImage
           }
         }
       }
@@ -30,6 +31,7 @@ const Seo = ({ description, lang, title, children }) => {
 
   const metaDescription = description || site.siteMetadata.description
   const defaultTitle = site.siteMetadata?.title
+  const cardImageUrl = `${site.siteMetadata.siteUrl}${site.siteMetadata?.cardImage}`
 
   return (
     <>
@@ -38,8 +40,8 @@ const Seo = ({ description, lang, title, children }) => {
       <meta property="og:title" content={title} />
       <meta property="og:description" content={metaDescription} />
       <meta property="og:type" content="website" />
-      <meta property="og:img" content={`${site.siteMetadata?.siteUrl}/images/tube.jpg`} />
       <meta name="twitter:card" content="summary" />
+      <meta name="twitter:image" content={seo.image} />
       <meta
         name="twitter:creator"
         content={site.siteMetadata?.social?.twitter || ``}
