@@ -20,27 +20,27 @@ html {
 }
 
 h1 {
-  font-size: 3rem;
-}
-
-h2 {
   font-size: 2rem;
 }
 
+h2 {
+  font-size: 1.5rem;
+}
+
 h3 {
-  font-size: 1.7rem;
+  font-size: 1.3rem;
 }
 
 h4 {
-  font-size: 1.3rem;
-}
-
-p {
   font-size: 1.1rem;
 }
 
+p {
+  font-size: 1rem;
+}
+
 li {
-  font-size: 1.3rem;
+  font-size: 1rem;
 }
 
 i {
@@ -56,6 +56,20 @@ hr {
   color: var(--paragraph);
 }
 
+strong {
+  text-decoration: underline;
+  /* 下線 */
+  text-decoration-thickness: 0.6em;
+  /* 線の太さ */
+  text-decoration-color: rgba(255, 228, 0, 0.4);
+  /* 線の色 */
+  text-underline-offset: -0.3em;
+  /* 線の位置。テキストに重なるようにやや上部にする */
+  text-decoration-skip-ink: none;
+  /* 下線と文字列が重なる部分でも下線が省略されない（線が途切れない） */
+  /* 参考：https://zenn.dev/catnose99/articles/3239ba0d49cda9 */
+}
+
 .shere-btn-desktop {
   font-size: 35px;
   color: var(--button);
@@ -67,39 +81,38 @@ hr {
 }
 
 .shere-btn-desktop i {
-  padding: .5rem 0;
+  padding: 0.5rem 0;
 }
 
 .share-btn-mobile {
   margin-top: 1rem;
-  padding: .5rem;
+  padding: 0.5rem;
   width: 80%;
   border: 3px solid var(--accent-color);
-  background-color: rgba(252, 140, 138, .15);
+  background-color: rgba(252, 140, 138, 0.15);
   border-radius: 10px;
 }
 
 .file::after {
-  content: '\f15c';
-  font-family: 'Font Awesome 6 Free';
+  content: "\f15c";
+  font-family: "Font Awesome 6 Free";
   font-weight: 900;
   font-size: 13px;
   padding-left: 3px;
 }
 
 .tag {
-  font-family: 'Silkscreen', cursive;
+  font-family: "Silkscreen", cursive;
   font-size: 130%;
 }
 
 body {
-  font-family: 'Kiwi Maru', serif;
+  font-family: "Noto Sans JP";
   background-color: var(--background);
   color: var(--paragraph);
   width: 100vw;
   height: 100vh;
 }
-
 
 .navbar {
   margin: 1rem auto;
@@ -134,14 +147,13 @@ HEADER
 ================================================ */
 header {
   color: var(--text-color);
-  font-family: 'Silkscreen', cursive;
+  font-family: "Silkscreen", cursive;
   background-color: var(--main-background);
   margin-bottom: 40px;
   border-bottom-left-radius: 40px;
   border-bottom-right-radius: 40px;
-  box-shadow:
-    0 20px 0 -10px rgb(105, 171, 209),
-    0 40px 0 -20px rgb(198, 224, 231)
+  box-shadow: 0 20px 0 -10px rgb(105, 171, 209),
+    0 40px 0 -20px rgb(198, 224, 231);
 }
 
 .title {
@@ -149,20 +161,26 @@ header {
   text-align: center;
 }
 
+.title h1 {
+  font-size: 3rem;
+}
 
 .navbar ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
 
+.navbar-nav li {
+  font-size: 1.2rem;
 }
 
 /*
 MAIN
 ================================================ */
 main {
-  min-width: 45vw;
-  width: 45vw;
+  min-width: 60vw;
+  width: 60vw;
   background-color: var(--main-background);
   height: 100%;
   padding: 1rem;
@@ -180,7 +198,7 @@ main {
 POST CARD
 ================================================ */
 .card_tag {
-  font-family: 'Silkscreen', cursive;
+  font-family: "Silkscreen", cursive;
   position: absolute;
   text-align: center;
   color: #fff;
@@ -195,7 +213,7 @@ POST CARD
   border-radius: 15px;
   padding: 2rem;
   align-items: center;
-  width: calc(85%/2);
+  width: calc(85% / 2);
 }
 
 .card_text {
@@ -205,7 +223,8 @@ POST CARD
 .card_article_title {
   margin: 0 auto;
   vertical-align: middle;
-  padding: 1rem 0 .5rem 0;
+  line-height: 160%;
+  padding: 1rem 0 0.5rem 0;
 }
 
 .card_article_text {
@@ -252,13 +271,13 @@ aside {
 }
 
 .icon {
-  border-radius: calc(15vw/3);
+  border-radius: calc(15vw / 3);
   margin: 20px auto;
 }
 
 .name {
   font-size: 1.5em;
-  font-family: 'Silkscreen', cursive;
+  font-family: "Silkscreen", cursive;
   padding-bottom: 10px;
 }
 
@@ -281,12 +300,11 @@ aside {
   padding-left: 2rem;
 }
 
-
 /*
 FOOTER
 ================================================ */
 footer {
-  font-family: 'Silkscreen', cursive;
+  font-family: "Silkscreen", cursive;
   color: var(--text-color);
   width: 100vw;
   bottom: 0;

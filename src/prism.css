@@ -1,7 +1,7 @@
 .gatsby-code-title {
     background: rgba(74, 150, 204, 0.3);
     color: var(--paragraph);
-    font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    font-family:  "Ubuntu Mono";
     margin: 20px 0px -24px;
     padding: 8px 1rem 20px;
     line-height: 1rem;
@@ -11,4 +11,14 @@
 
 pre[class*="language-"]>code {
     padding: .8rem;
+    box-shadow: 5px 5px 5px rgba(74, 150, 204, 0.3) !important;
 }
+
+pre[class*="language-"]:before,
+pre[class*="language-"]:after {
+    box-shadow: none !important;
+}
+.gatsby-highlight{
+    margin-top: 2rem;
+}
+

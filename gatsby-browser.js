@@ -12,6 +12,5 @@ import "./src/mobile.css"
 import "./src/templates/blog-post.css"
 import "./src/templates/tagPage.css"
 
-
 // Highlighting for code blocks
-import 'prismjs/themes/prism-coy.css'
+import "prismjs/themes/prism-coy.css"

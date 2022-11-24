@@ -10,13 +10,12 @@ import { Share } from "./share"
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
   const isRootPath = location.pathname === rootPath
+  
   const iconStyle = {
     fontSize: '1rem',
     marginLeft: '.3rem',
     marginRight: '.6rem'
   }
-
-
 
   const header =
     (<>

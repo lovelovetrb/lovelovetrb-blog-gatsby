@@ -9,7 +9,7 @@ module.exports = {
     siteUrl: `https://risu-note.net/`,
     social: {
       twitter: `lovelovetrb`,
-      github: 'lovelovetrb'
+      github: "lovelovetrb",
     },
     cardImage: `src/images/card.jpg`,
   },
@@ -18,28 +18,31 @@ module.exports = {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
         trackingIds: [process.env.GATSBY_TRACKING_ID],
-      }
+      },
     },
     {
       resolve: `gatsby-plugin-breadcrumb`,
       options: {
         useAutoGen: true,
-        autoGenHomeLabel: `Home`
+        autoGenHomeLabel: `Home`,
       },
     },
     {
       resolve: `gatsby-omni-font-loader`,
       options: {
         enableListener: true,
-        preconnect: [`https://fonts.googleapis.com`, `https://fonts.gstatic.com`],
+        preconnect: [
+          `https://fonts.googleapis.com`,
+          `https://fonts.gstatic.com`,
+        ],
         web: [
           {
             name: `Silkscreen`,
             file: `https://fonts.googleapis.com/css2?family=Silkscreen&display=swap`,
           },
           {
-            name: `Kiwi Maru`,
-            file: `https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap`,
+            name: `Noto Sans JP`,
+            file: `https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap`,
           },
         ],
       },
@@ -64,7 +67,7 @@ module.exports = {
       options: {
         plugins: [
           {
-            resolve: 'gatsby-remark-prismjs-title',
+            resolve: "gatsby-remark-prismjs-title",
           },
           {
             resolve: `gatsby-remark-images`,

@@ -1,39 +1,39 @@
 .breadcrumb {
-    color: var(--text-color);
-    font-family: 'Silkscreen', cursive;
+  color: var(--text-color);
+  font-family: "Silkscreen", cursive;
 }
 
 .breadcrumb ol {
-    align-items: center;
-    margin-bottom: .5rem !important;
+  align-items: center;
+  margin-bottom: 0.5rem !important;
 }
 
 .content {
-    border-radius: 20px;
-    background-color: var(--text-color);
-    color: var(--paragrah);
-    padding: 1rem 3rem 3rem;
+  border-radius: 20px;
+  background-color: var(--text-color);
+  color: var(--paragrah);
+  padding: 1rem 3rem 3rem;
 }
 
 .article-data {
-    display: flex;
-    justify-content: space-between;
-    padding-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 1rem;
 }
 
 .article-data p {
-    margin-left: 5px;
-    margin-right: 10px;
+  margin-left: 5px;
+  margin-right: 10px;
 }
 
 .article-data-publish-time {
-    display: flex;
-    align-items: flex-end;
+  display: flex;
+  align-items: flex-end;
 }
 
 .article-title {
-    text-align: center;
-    margin: 2rem 0;
+  text-align: center;
+  margin: 2rem 0;
 }
 
 /*
@@ -42,37 +42,44 @@
 .sentence h2,
 .sentence h3,
 .sentence h4 {
-    border-bottom: solid 3px var(--main-background);
-    margin: 1rem 0;
+  border-bottom: solid 3px var(--main-background);
+  margin: 1rem 0;
 }
 
 .sentence {
-    line-height: 1.9;
-    margin-top: 1rem;
-    overflow-wrap: break-word
+  line-height: 1.9;
+  margin-top: 1rem;
+  overflow-wrap: break-word;
 }
 
-.sentence p+p {
-    margin-top: 3rem;
+.sentence p + p {
+  margin-top: 2rem;
 }
 
-.sentence>p {
-    white-space: pre-wrap;
+.sentence > p {
+  white-space: pre-wrap;
 }
 
-.sentence>p * {
-    white-space: normal;
+.sentence > p * {
+  white-space: normal;
 }
 
 .previous-post,
 .next-post {
-    width: 100%;
+  width: 100%;
 }
 
 .previous-post p {
-    text-align: left;
+  text-align: left;
 }
 
 .next-post p {
-    text-align: right;
+  text-align: right;
+}
+
+blockquote {
+  margin: 1rem;
+  background-color: rgba(216, 238, 254,0.6);
+  padding: 1rem;
+  border-radius: 10px;
 }
