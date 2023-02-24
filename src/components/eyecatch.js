@@ -1,9 +1,10 @@
 import React from "react"
-import { Twemoji } from "react-emoji-render"
+import Twemoji  from "@twemoji/api"
 
 export const Eyecatch = ({ place, icon, color }) => {
   let css
-
+  const rendItem = Twemoji.parse(icon)
+  console.log(icon)
   if (place === "list") {
     css = {
       backgroundColor: color,
@@ -34,7 +35,7 @@ export const Eyecatch = ({ place, icon, color }) => {
 
   return (
     <div style={css}>
-      <Twemoji text={icon} />
+      {icon}
     </div>
   )
 }
