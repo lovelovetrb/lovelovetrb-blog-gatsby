@@ -1,48 +1,44 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
 
-import Layout from "../components/layout"
-import Seo from "../components/seo"
-import { Eyecatch } from "../components/eyecatch"
+import Layout from "/src/components/layout"
+import Seo from "/src/components/seo"
+import { Eyecatch } from "/src/components/eyecatch"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faClock } from "@fortawesome/free-solid-svg-icons"
 
-import { Breadcrumb } from 'gatsby-plugin-breadcrumb'
-import 'gatsby-plugin-breadcrumb/gatsby-plugin-breadcrumb.css'
+import { Breadcrumb } from "gatsby-plugin-breadcrumb"
+import "gatsby-plugin-breadcrumb/gatsby-plugin-breadcrumb.css"
 
 const BlogPostTemplate = ({
   data: { previous, next, site, markdownRemark: post },
   location,
-  pageContext
+  pageContext,
 }) => {
   const siteTitle = site.siteMetadata?.title || `Title`
   const {
     breadcrumb: { crumbs },
   } = pageContext
   const tagStyle = {
-    fontFamily: 'Silkscreen, cursive',
-    fontSize: '1.2rem',
-    marginTop: '1rem'
+    fontFamily: "Silkscreen, cursive",
+    fontSize: "1.2rem",
+    marginTop: "1rem",
   }
 
-  const color = post.frontmatter.color || '#B3E5FC'
-  const icon = post.frontmatter.icon || '🔍'
+  const color = post.frontmatter.color || "#B3E5FC"
+  const icon = post.frontmatter.icon || "🔍"
   const isPublish = post.frontmatter.publish
 
   return (
     <Layout location={location} title={siteTitle}>
-      <Breadcrumb
-        crumbs={crumbs}
-        crumbSeparator=" > "
-        className='breadcrumb'
-      />
+      <Breadcrumb crumbs={crumbs} crumbSeparator=" > " className="breadcrumb" />
       <article
         itemScope
         itemType="http://schema.org/Article"
         className="content"
       >
-        <Eyecatch place={'article'} color={color} icon={icon} />
+        <Eyecatch place={"article"} color={color} icon={icon} />
         <div className="article-title">
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
         </div>
@@ -51,13 +47,13 @@ const BlogPostTemplate = ({
             <FontAwesomeIcon icon={faClock} />
             <p>{post.frontmatter.date}</p>
           </div>
-          {isPublish || (<p>{`pubulish : ${isPublish}`}</p>)}
+          {isPublish || <p>{`pubulish : ${isPublish}`}</p>}
           <div style={tagStyle}>
-            {post.frontmatter.tags.map((tag) => {
+            {post.frontmatter.tags.map(tag => {
               return (
                 <p>
-                  <Link to={`/tags/${tag}`} style={{ margin: '0 3px' }}>
-                    #{tag || 'none'}
+                  <Link to={`/tags/${tag}`} style={{ margin: "0 3px" }}>
+                    #{tag || "none"}
                   </Link>
                 </p>
               )
@@ -100,7 +96,7 @@ const BlogPostTemplate = ({
           </ul>
         </nav>
       </article>
-    </Layout >
+    </Layout>
   )
 }
 
@@ -140,9 +136,7 @@ export const pageQuery = graphql`
         publish
       }
     }
-    previous: markdownRemark(
-      id: { eq: $previousPostId }
-      ) {
+    previous: markdownRemark(id: { eq: $previousPostId }) {
       fields {
         slug
       }
@@ -150,9 +144,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    next: markdownRemark(
-      id: { eq: $nextPostId }
-      ) {
+    next: markdownRemark(id: { eq: $nextPostId }) {
       fields {
         slug
       }

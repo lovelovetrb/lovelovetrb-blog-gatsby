@@ -1,31 +1,28 @@
-.tag-container {}
-
 .tag-header {
-    font-family: 'Silkscreen', cursive;
-    text-align: center;
-    margin: 1rem;
+  font-family: "Silkscreen", cursive;
+  text-align: center;
+  margin: 1rem;
 }
 
 .bg-blue {
-    color: var(--text-color);
+  color: var(--text-color);
 }
 
 .go-all-tags {
-    font-family: 'Silkscreen', cursive;
-    color: var(--text-color);
-    font-size: 1.2rem;
-    text-align: right;
+  font-family: "Silkscreen", cursive;
+  color: var(--text-color);
+  font-size: 1.2rem;
+  text-align: right;
 }
 
 .tag-list {
-    padding: 1rem;
-    display: flex;
-    flex-wrap: wrap;
-
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .tag-list li {
-    text-align: center;
-    width: 50%;
-    margin: 1rem 0;
+  text-align: center;
+  width: 50%;
+  margin: 1rem 0;
 }
