@@ -62,34 +62,20 @@
     font-size: 1.8rem;
   }
 
-  main {
-    width: 55vw;
-  }
-
-  aside {
-    width: 25vw;
-  }
-
-  .side-card {
-    width: 25vw;
-  }
-
   .container {
-    flex-direction: row;
-    /* align-items: center; */
+    flex-direction: column;
+    align-items: center;
   }
 
-  /*main,
+  main,
   aside,
   .side-card {
     width: 80vw !important;
-  }*/
-
-  .isDesktop{
-    background-color:none;
   }
 
   .shere {
+    width: 80vw;
+    background-color: #fffffe;
     text-align: center;
     margin: 0 auto;
     border-radius: 20px;
@@ -98,6 +84,7 @@
   }
 
   .side-card {
-    margin-left: 20px;
+    margin-left: 0;
+    margin-top: 20px;
   }
 }

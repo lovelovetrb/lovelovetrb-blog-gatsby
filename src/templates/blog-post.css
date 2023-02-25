@@ -36,6 +36,9 @@
   margin: 2rem 0;
 }
 
+.article-title h2{
+  font-size: 25px;
+}
 /*
  SENTENCE
 ================================================ */
@@ -66,6 +69,7 @@
 
 .previous-post,
 .next-post {
+  margin:.5rem 0;
   width: 100%;
 }
 
@@ -77,9 +81,18 @@
   text-align: right;
 }
 
-blockquote {
+.sentence ul {
   margin: 1rem;
   background-color: rgba(216, 238, 254, 0.6);
-  padding: 1rem;
   border-radius: 10px;
+}
+
+.sentence li{
+  padding:.5rem;
+}
+
+.sentence blockquote {
+  color:red;
+  font-weight:600;
+  padding: 1rem;
 }

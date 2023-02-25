@@ -22,7 +22,6 @@ const BlogPostTemplate = ({
   } = pageContext
   const tagStyle = {
     fontFamily: "Silkscreen, cursive",
-    fontSize: "1.2rem",
     marginTop: "1rem",
   }
 
@@ -40,7 +39,7 @@ const BlogPostTemplate = ({
       >
         <Eyecatch place={"article"} color={color} icon={icon} />
         <div className="article-title">
-          <h1 itemProp="headline">{post.frontmatter.title}</h1>
+          <h2 itemProp="headline">{post.frontmatter.title}</h2>
         </div>
         <div className="article-data">
           <div className="article-data-publish-time">

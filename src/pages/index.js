@@ -13,7 +13,7 @@ const BlogIndex = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <h1 className="tag-header bg-blue">- All Posts -</h1>
+      <h2 className="tag-header bg-blue">- All Posts -</h2>
       <ol className="article_list">
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
@@ -30,7 +30,7 @@ const BlogIndex = ({ data, location }) => {
               <Link to={post.fields.slug} itemProp="url">
                 <Eyecatch place={"list"} color={color} icon={icon} />
                 <div class="card_text">
-                  <h3 class="card_article_title">{title}</h3>
+                  <h4 class="card_article_title">{title}</h4>
                   <p
                     dangerouslySetInnerHTML={{
                       __html: post.frontmatter.description || post.except,

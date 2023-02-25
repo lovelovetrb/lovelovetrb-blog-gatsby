@@ -2,7 +2,7 @@
 title: postgresqlで日付の計算を行い，計算結果を条件にする方法
 date: "2022-11-24"
 tags: ['postgresql']
-description: ""
+description: "Postgrsql???????"
 publish: true
 ---
 
