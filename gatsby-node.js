@@ -56,7 +56,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   if (posts.length > 0) {
     posts.forEach((post, index) => {
-      // 
+      //
       if (!post.frontmatter.publish
         && process.env.NODE_ENV === 'production'
       ) {
