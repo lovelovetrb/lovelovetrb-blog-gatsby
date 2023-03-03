@@ -1,7 +1,8 @@
 .tag-header {
   font-family: "Silkscreen", cursive;
   text-align: center;
-  margin: 1rem;
+  margin: .8rem;
+  font-size:1.3rem;
 }
 
 .bg-blue {

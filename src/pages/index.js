@@ -32,6 +32,7 @@ const BlogIndex = ({ data, location }) => {
                 <div class="card_text">
                   <h4 class="card_article_title">{title}</h4>
                   <p
+                    className="card_article_text"
                     dangerouslySetInnerHTML={{
                       __html: post.frontmatter.description || post.except,
                     }}

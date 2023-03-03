@@ -175,7 +175,6 @@ header {
   margin: 1rem 0;
 }
 
-
 /*
 MAIN
 ================================================ */
@@ -217,6 +216,12 @@ POST CARD
   width: calc(85% / 2);
 }
 
+@media (max-width: 480px) {
+  .card {
+    padding: 1rem;
+  }
+}
+
 .card_text {
   overflow-wrap: break-word;
 }
@@ -229,17 +234,7 @@ POST CARD
 }
 
 .card_article_text {
-  padding: 1em;
-  line-height: 2.5em;
-  letter-spacing: 2px;
-  height: 6em;
-  width: 90%;
-  margin: 0 auto;
-  /* 溢れたテキストを...表示 */
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
+  font-size: 90%;
 }
 
 /*
