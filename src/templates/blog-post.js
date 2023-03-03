@@ -8,18 +8,12 @@ import { Eyecatch } from "/src/components/eyecatch"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faClock } from "@fortawesome/free-solid-svg-icons"
 
-import { Breadcrumb } from "gatsby-plugin-breadcrumb"
-import "gatsby-plugin-breadcrumb/gatsby-plugin-breadcrumb.css"
-
 const BlogPostTemplate = ({
   data: { previous, next, site, markdownRemark: post },
   location,
   pageContext,
 }) => {
   const siteTitle = site.siteMetadata?.title || `Title`
-  const {
-    breadcrumb: { crumbs },
-  } = pageContext
   const tagStyle = {
     fontFamily: "Silkscreen, cursive",
     marginTop: "1rem",
@@ -31,7 +25,6 @@ const BlogPostTemplate = ({
 
   return (
     <Layout location={location} title={siteTitle}>
-      <Breadcrumb crumbs={crumbs} crumbSeparator=" > " className="breadcrumb" />
       <article
         itemScope
         itemType="http://schema.org/Article"

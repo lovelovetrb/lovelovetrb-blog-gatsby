@@ -3,10 +3,6 @@ import React from "react"
 import Layout from "/src/components/layout"
 import Seo from "/src/components/seo"
 
-//  Breadcrumb
-import { Breadcrumb } from "gatsby-plugin-breadcrumb"
-import "gatsby-plugin-breadcrumb/gatsby-plugin-breadcrumb.css"
-
 // Components
 import { Link, graphql } from "gatsby"
 
@@ -20,13 +16,8 @@ const TagsPage = ({
   location,
   pageContext,
 }) => {
-  const {
-    breadcrumb: { crumbs },
-  } = pageContext
-
   return (
     <Layout location={location} title={title}>
-      <Breadcrumb crumbs={crumbs} crumbSeparator=" > " className="breadcrumb" />
       <div className="content">
         <h1 className="tag-header">Tags</h1>
         <ul className="tag-list">
@@ -58,7 +49,7 @@ export const pageQuery = graphql`
       filter: { frontmatter: { publish: { eq: true } } }
       limit: 2000
     ) {
-      group(field: frontmatter___tags) {
+      group(field: { frontmatter: { tags: SELECT } }) {
         fieldValue
         totalCount
       }

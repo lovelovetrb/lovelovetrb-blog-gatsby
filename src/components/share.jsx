@@ -8,7 +8,6 @@ import {
 } from "@fortawesome/free-brands-svg-icons"
 import { useStaticQuery, graphql } from "gatsby"
 import { isMobile, isDesktop } from "react-device-detect"
-import {css} from "/src/styles/share.module.css"
 
 export const Share = ({ location }) => {
   const { site } = useStaticQuery(
@@ -59,9 +58,8 @@ export const Share = ({ location }) => {
   }
 
   if (isDesktop) {
-    console.log(css)
     return (
-      <div className={isDesktop ? `share ${css?.noBgColor}` : "share"}>
+      <div className={isDesktop ? `share ` : "share"}>
         <div className="shere-btn-desktop">
           <a
             className="sns__twitter"

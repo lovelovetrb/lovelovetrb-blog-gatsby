@@ -21,13 +21,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-breadcrumb`,
-      options: {
-        useAutoGen: true,
-        autoGenHomeLabel: `Home`,
-      },
-    },
-    {
       resolve: `gatsby-omni-font-loader`,
       options: {
         enableListener: true,

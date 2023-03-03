@@ -7,19 +7,12 @@ import Layout from "/src/components/layout"
 import { Eyecatch } from "/src/components/eyecatch"
 import Seo from "/src/components/seo"
 
-// Breadcrumb
-import { Breadcrumb } from "gatsby-plugin-breadcrumb"
-import "gatsby-plugin-breadcrumb/gatsby-plugin-breadcrumb.css"
-
 // FontAwesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faTag } from "@fortawesome/free-solid-svg-icons"
 
 const tagPage = ({ pageContext, data, location }) => {
   const { tag } = pageContext
-  const {
-    breadcrumb: { crumbs },
-  } = pageContext
   const { edges, totalCount } = data.allMarkdownRemark
   const tagHeader = `${totalCount} post${
     totalCount === 1 ? "" : "s"
@@ -28,7 +21,6 @@ const tagPage = ({ pageContext, data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <Breadcrumb crumbs={crumbs} crumbSeparator=" > " className="breadcrumb" />
       <div className="tag-container">
         <h2 className="tag-header bg-blue">{tagHeader}</h2>
         <ol className="article_list">
@@ -100,31 +92,31 @@ export const Head = ({ pageContext }) => {
 export const pageQuery = graphql`
   query ($tag: String) {
     site {
-      siteMetadata {
-        title
-      }
+    siteMetadata {
+      title
     }
-    allMarkdownRemark(
-      limit: 2000
-      sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { publish: { eq: true }, tags: { in: [$tag] } } }
-    ) {
-      totalCount
-      edges {
-        node {
-          fields {
-            slug
-          }
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            title
-            description
-            color
-            icon
-            publish
-          }
+  }
+  allMarkdownRemark(
+    limit: 2000
+    sort: {frontmatter: {date: DESC}}
+    filter: {frontmatter: {publish: {eq: true}, tags: {in: [$tag]}}}
+  ) {
+    totalCount
+    edges {
+      node {
+        fields {
+          slug
+        }
+        frontmatter {
+          date(formatString: "MMMM DD, YYYY")
+          title
+          description
+          color
+          icon
+          publish
         }
       }
     }
   }
+   }
 `
