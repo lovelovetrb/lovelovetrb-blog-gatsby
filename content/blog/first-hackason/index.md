@@ -1,8 +1,8 @@
 ---
 title: 初めてのハッカソンに参加してきた！
-date: "2023-2-28"
+date: "2022-2-28"
 description: "hack + marathon"
-tags: ['tech hackathon']
+tags: ['tech', 'hackathon']
 color: '#bce2e8'
 icon: 😎
 publish: false
@@ -58,8 +58,11 @@ publish: false
 短く決められた期間内に成果を出す、「ハッカソン」
 ハッカソンならではの戦い方もあり、非常に刺激的な二日間でした！
 
-何より一番参加して良かったのは同じ志を持っている
+何より一番参加して良かったのは同じ志を持っている学生の方々のアイデアに触れることができたこと！
+自身のモチベーションにもつながる良い機会となりました！
 
 ### 今回のハッカソンで開発したプロダクト
-URL：
+title: Majority Railway
+URL: [link](https://hackathon-app-2-11.vercel.app/)
+explanation: [Twitter Link](https://twitter.com/geek_pjt/status/1624701536705318912)
 
