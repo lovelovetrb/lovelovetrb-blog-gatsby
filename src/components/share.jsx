@@ -105,4 +105,5 @@ export const Share = ({ location }) => {
       </div>
     )
   }
+  return
 }
