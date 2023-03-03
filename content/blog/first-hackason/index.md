@@ -1,6 +1,6 @@
 ---
 title: 初めてのハッカソンに参加してきた！
-date: "2022-2-28"
+date: "2022-03-03"
 description: "hack + marathon"
 tags: ['tech', 'hackathon']
 color: '#bce2e8'
