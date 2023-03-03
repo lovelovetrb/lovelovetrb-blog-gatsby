@@ -5,7 +5,7 @@ description: "hack + marathon"
 tags: ['tech', 'hackathon']
 color: '#bce2e8'
 icon: 😎
-publish: false
+publish: true
 ---
 
 
