@@ -36,9 +36,10 @@
   margin: 2rem 0;
 }
 
-.article-title h2{
+.article-title h2 {
   font-size: 25px;
 }
+
 /*
  SENTENCE
 ================================================ */
@@ -69,7 +70,7 @@
 
 .previous-post,
 .next-post {
-  margin:.5rem 0;
+  margin: 0.5rem 0;
   width: 100%;
 }
 
@@ -87,11 +88,26 @@
   border-radius: 10px;
 }
 
-.sentence li{
-  padding:.5rem;
+.sentence li {
+  padding: 0.5rem;
 }
 
 .sentence blockquote {
-  font-weight:600;
+  font-weight: 600;
   padding: 1rem;
+}
+
+@media (max-device-width: 1366px) {
+  .article-title h2 {
+    font-size: 1rem;
+  }
+
+  .sentence ul {
+    margin: 0.5rem;
+  }
+
+  .sentence blockquote {
+    font-weight: 600;
+    padding: 0.3rem;
+  }
 }
