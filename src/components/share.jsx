@@ -57,7 +57,7 @@ export const Share = ({ location }) => {
     )
   }
 
-  if (isDesktop) {
+  if (isDesktop && !isMobile) {
     return (
       <div className={isDesktop ? `share ` : "share"}>
         <div className="shere-btn-desktop">
@@ -105,5 +105,5 @@ export const Share = ({ location }) => {
       </div>
     )
   }
-  return
+  return <></>
 }
