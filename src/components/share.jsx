@@ -32,7 +32,7 @@ export const Share = ({ location }) => {
       url: location.href,
     }
     setShareData(shareData)
-  }, [])
+  }, [location.href, site.siteMetadata?.title])
 
   const onClickShareButton = async () => {
     if (navigator?.canShare) {
@@ -42,7 +42,7 @@ export const Share = ({ location }) => {
     }
   }
 
-  if (isMobile && !isDesktop) {
+  if (isMobile) {
     return (
       <div className="shere">
         <h3>Please Shere This Page!</h3>
@@ -57,7 +57,7 @@ export const Share = ({ location }) => {
     )
   }
 
-  if (isDesktop && !isMobile) {
+  if (isDesktop) {
     return (
       <div className={isDesktop ? `share ` : "share"}>
         <div className="shere-btn-desktop">

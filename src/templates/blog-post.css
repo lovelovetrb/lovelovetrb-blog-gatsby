@@ -38,14 +38,29 @@
 
 .article-title h2 {
   font-size: 25px;
-  line-height:150%;
+  line-height: 150%;
 }
 
 /*
  SENTENCE
 ================================================ */
-.sentence h2,
-.sentence h3,
+.sentence h2 {
+  color: var(--main-background);
+  padding: 0.5em 0; /*上下の余白*/
+  border-top: solid 3px var(--main-background); /*上線*/
+  border-bottom: solid 3px var(--main-background); /*下線*/
+  margin: 2rem 0;
+  text-indent: 10px;
+}
+
+.sentence h3 {
+  padding: 0.25em 0.5em; /*上下 左右の余白*/
+  color: var(--paragraph);
+  background: transparent; /*背景透明に*/
+  border-left: solid 5px var(--main-background); /*左線*/
+  margin: 1rem 0;
+}
+
 .sentence h4 {
   border-bottom: solid 3px var(--main-background);
   margin: 1rem 0;
@@ -55,6 +70,10 @@
   line-height: 1.9;
   margin-top: 1rem;
   overflow-wrap: break-word;
+}
+
+.sentence p {
+  margin: 0.5rem;
 }
 
 .sentence p + p {
@@ -67,6 +86,16 @@
 
 .sentence > p * {
   white-space: normal;
+}
+
+.sentence blockquote {
+  padding: 0.5em 1em;
+  margin: 2em 0;
+  font-weight: bold;
+  color: #6091d3; /*文字色*/
+  background: #fff;
+  border: solid 3px #6091d3; /*線*/
+  border-radius: 10px; /*角の丸み*/
 }
 
 .previous-post,
@@ -96,6 +125,26 @@
 .sentence blockquote {
   font-weight: 600;
   padding: 1rem;
+}
+
+.sentence a {
+  padding-bottom: 1px; /* 線の下に余白を設定 */
+  margin-inline: 0.5rem;
+  color: var(--main-background);
+  text-decoration: none; /* デフォルトの下線を非表示にする */
+  background-image: linear-gradient(
+    90deg,
+    var(--main-background),
+    var(--main-background)
+  ); /* 線の色 */
+  background-repeat: no-repeat;
+  background-position: left bottom; /* 線の起点を左・下に設定 */
+  background-size: 0 1px; /* 線の横幅を0、縦幅を1pxに */
+  transition: background-size 0.6s; /* 線を伸ばすアニメーション実行時間を指定 */
+}
+
+.sentence a:hover {
+  background-size: 100% 1px; /* 線の横幅を100%にする */
 }
 
 @media (max-device-width: 1366px) {

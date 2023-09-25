@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Risu Note`,
     author: {
-      name: `Mizuki`,
+      name: `RISUman`,
       summary: `POEPOE infomatic university student`,
     },
     description: `Risu Note | 情報系大学生のブログ`,

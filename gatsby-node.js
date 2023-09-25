@@ -8,7 +8,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const blogPost = path.resolve(`src/templates/blog-post.js`)
   const tagTemplate = path.resolve("src/templates/tagPage.js")
 
-
   // Get all markdown blog posts sorted by date
   const result = await graphql(
     `
@@ -22,7 +21,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             fields {
               slug
             }
-            frontmatter{
+            frontmatter {
               tags
               publish
               title
@@ -30,10 +29,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           }
         }
         tagsGroup: allMarkdownRemark(limit: 2000) {
-            group(field: frontmatter___tags) {
-              fieldValue
-            }
+          group(field: frontmatter___tags) {
+            fieldValue
           }
+        }
       }
     `
   )
@@ -57,11 +56,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   if (posts.length > 0) {
     posts.forEach((post, index) => {
       //
-      if (!post.frontmatter.publish
-        && process.env.NODE_ENV === 'production'
-      ) {
-        console.log(`Page SKIP  :[${post.frontmatter.title}]`);
-        return;
+      if (!post.frontmatter.publish && process.env.NODE_ENV === "production") {
+        console.log(`Page SKIP  :[${post.frontmatter.title}]`)
+        return
       }
 
       let previousPost = index === 0 ? null : posts[index - 1]
@@ -78,7 +75,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           }
           i--
           previousPost = posts[i]
-          if (previousPost === null) { break }
+          if (previousPost === null) {
+            break
+          }
         }
       }
 
@@ -115,10 +114,12 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
       // Make tag pages
       tags.forEach(tag => {
-        if (!post.frontmatter.publish
-          && process.env.NODE_ENV === 'production') {
-          console.log(`Page SKIP  :[${post.frontmatter.title}]`);
-          return;
+        if (
+          !post.frontmatter.publish &&
+          process.env.NODE_ENV === "production"
+        ) {
+          console.log(`Page SKIP  :[${post.frontmatter.title}]`)
+          return
         }
         createPage({
           path: `/tags/${tag.fieldValue}/`,
@@ -128,7 +129,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           },
         })
       })
-
     })
   }
 }
