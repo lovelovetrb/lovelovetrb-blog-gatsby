@@ -46,7 +46,7 @@ const Bio = () => {
         quality={95}
         alt="Profile picture"
       />
-      <h3 className="name url"><a href="https://lovelovetrb.github.io/" target="_blank" rel="noopener noreferrer">{author.name}</a></h3>
+      <h3 className="name url"><a href="https://lovelovetrb.com/" target="_blank" rel="noopener noreferrer">{author.name}</a></h3>
       <p className="textarea">{author?.summary || null}</p>
       <hr style={{ margin: '10px' }} />
       <h4>Contact Me!</h4>
@@ -57,7 +57,7 @@ const Bio = () => {
         marginTop: '10px',
       }}>
         <p style={{ margin: '2.5px', fontSize: '1.6rem' }}>
-          <a href={`https://lovelovetrb.github.io`} target="_blank" rel="noopener noreferrer">
+          <a href={`https://lovelovetrb.com`} target="_blank" rel="noopener noreferrer">
             <FontAwesomeIcon icon={faHouse} />
           </a>
         </p>
