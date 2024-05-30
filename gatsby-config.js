@@ -15,12 +15,6 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `gatsby-plugin-google-gtag`,
-      options: {
-        trackingIds: [process.env.GATSBY_TRACKING_ID],
-      },
-    },
-    {
       resolve: `gatsby-omni-font-loader`,
       options: {
         enableListener: true,

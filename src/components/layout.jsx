@@ -9,6 +9,7 @@ import { faAngleUp } from "@fortawesome/free-solid-svg-icons"
 
 // 全体に共通するレイアウトを定義する
 // <Layout>コンポーネントを呼べば良い
+// TODO: title Propsの削除
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
   const isRootPath = location.pathname === rootPath
