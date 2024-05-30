@@ -27,7 +27,7 @@ const Header = () => {
             </li>
             <li className="nav-item">
               <a
-                href="https://lovelovetrb.github.io/"
+                href="https://lovelovetrb.com/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
