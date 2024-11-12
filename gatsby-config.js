@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 module.exports = {
   siteMetadata: {
     title: `Risu Note`,
@@ -14,6 +16,12 @@ module.exports = {
     cardImage: `src/images/card.jpg`,
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: [process.env.GATSBY_TRACKING_ID || ""],
+      },
+    },
     {
       resolve: `gatsby-omni-font-loader`,
       options: {
