@@ -114,6 +114,10 @@ body {
   height: 100vh;
 }
 
+.global-wrapper {
+  min-height: 100vh;
+}
+
 .container {
   display: flex;
   flex-direction: row;
@@ -306,8 +310,9 @@ FOOTER
 footer {
   font-family: "Silkscreen", cursive;
   color: var(--text-color);
+  position: sticky;
+  top: 100vh;
   width: 100vw;
-  bottom: 0;
   background-color: var(--main-background);
   border-radius: 40px 40px 0 0;
   padding-bottom: 30px;
