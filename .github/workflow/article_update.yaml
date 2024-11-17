@@ -20,8 +20,9 @@ jobs:
         if: ${{ steps.check_pr.outputs.count == 0 }}
         run: |
           gh pr create \
-            -B main \
-            -t '記事更新: ${{ github.event.client_payload.commit_message }}' \
+            --title '記事更新: ${{ github.event.client_payload.commit_message }}' \
+            --body '' \
+            --base main \
       - name: Edit Release Pull Request
         if: ${{ steps.check_pr.outputs.count != 0 }}
         run: |
