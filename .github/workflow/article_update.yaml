@@ -1,0 +1,35 @@
+name: Article Update
+on:
+  repository_dispatch:
+    types: [article_update]
+
+jobs:
+  update_article:
+    runs-on: ubuntu-latest
+
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Check PullRequest Exists
+        id: check_pr
+        run: |
+            echo "count=$(gh pr list -S '記事更新'in:title | wc -l)" >> "$GITHUB_OUTPUT"
+      - name: Create Release Pull Request
+        if: ${{ steps.check_pr.outputs.count == 0 }}
+        run: |
+          gh pr create \
+            -B main \
+            -t '記事更新: ${{ github.event.client_payload.commit_message }}' \
+      - name: Edit Release Pull Request
+        if: ${{ steps.check_pr.outputs.count != 0 }}
+        run: |
+          pr_data=$(gh pr list -S '記事更新'in:title \
+            --json "title" \
+            | jq -c .[])
+          TITLE="$(echo $pr_data | jq -r '.title')"
+          echo $TITLE
+          gh pr edit  ${{ github.ref_name }} \
+            -t "${TITLE} / ${{ github.event.client_payload.commit_message }}"
+          
