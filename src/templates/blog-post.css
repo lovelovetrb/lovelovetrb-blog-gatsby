@@ -23,6 +23,7 @@
 }
 
 .article-data p {
+  font-size: 17px;
   margin-left: 5px;
   margin-right: 10px;
 }
@@ -38,7 +39,7 @@
 }
 
 .article-title h2 {
-  font-size: 25px;
+  font-size: 30px;
   line-height: 150%;
 }
 
@@ -75,12 +76,13 @@
 }
 
 .sentence {
-  line-height: 1.9;
+  line-height: 2.2;
   margin-top: 3rem;
   overflow-wrap: break-word;
 }
 
 .sentence p {
+  font-size: 1.1rem;
   margin: 0.5rem;
 }
 
