@@ -1,0 +1,3 @@
+[submodule "blog"]
+	path = content/blog
+	url = git@github.com:lovelovetrb/lovelovetrb-tech-article.git
