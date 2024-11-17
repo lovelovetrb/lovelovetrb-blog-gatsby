@@ -37,7 +37,7 @@ module.exports = {
           },
           {
             name: `Noto Sans JP`,
-            file: `https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap`,
+            file: `https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap`,
           },
         ],
       },

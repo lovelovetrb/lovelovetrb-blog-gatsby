@@ -1,24 +1,26 @@
 .gatsby-code-title {
-    background: rgba(74, 150, 204, 0.3);
-    color: var(--paragraph);
-    font-family:  "Ubuntu Mono";
-    margin: 20px 0px -24px;
-    padding: 8px 1rem 20px;
-    line-height: 1rem;
-    display: table;
-    border-radius: 10px;
+  background: rgba(74, 150, 204, 0.3);
+  color: var(--paragraph);
+  font-family: "Ubuntu Mono";
+  margin: 20px 0px -24px;
+  padding: 8px 1rem 20px;
+  line-height: 1rem;
+  display: table;
+  border-radius: 10px;
 }
 
-pre[class*="language-"]>code {
-    padding: .8rem;
-    box-shadow: 5px 5px 5px rgba(74, 150, 204, 0.3) !important;
+.gatsby-highlight {
+  margin: 1.5rem 0;
 }
 
-pre[class*="language-"]:before,
-pre[class*="language-"]:after {
-    box-shadow: none !important;
-}
-.gatsby-highlight{
-    margin-top: 2rem;
+:not(pre) > code[class*="language-"] {
+  color: var(--paragraph) !important;
+  background: rgba(74, 150, 204, 0.1) !important;
+  text-shadow: none;
+  margin: 0 5px !important;
+  padding: 3px 5px !important;
 }
 
+.gatsby-code-title + .gatsby-highlight {
+  margin-top: 0;
+}
