@@ -2,7 +2,6 @@ name: Article Update
 on:
   repository_dispatch:
     types: [article_update]
-
 jobs:
   update_article:
     runs-on: ubuntu-latest
@@ -12,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          fetch-depth: 0  # 全履歴を取得
+          fetch-depth: 0
           ssh-key: ${{ secrets.GHA_SSH_PRIVATE_KEY }}
           submodules: recursive
 
@@ -21,56 +20,57 @@ jobs:
 
       - name: Check git status
         id: status
-        run: echo "status=$(git status -s)" >> $GITHUB_OUTPUT
+        run: |
+          git status -s
+          echo "has_changes=$(git status -s | wc -l)" >> $GITHUB_OUTPUT
+
+      - name: Create Branch
+        if: ${{ steps.status.outputs.has_changes != '0' }}
+        run: |
+          BRANCH_NAME="article-update-$(date +%Y%m%d-%H%M%S)"
+          git checkout -b $BRANCH_NAME
+          echo "BRANCH_NAME=$BRANCH_NAME" >> $GITHUB_ENV
 
       - name: Commit
+        if: ${{ steps.status.outputs.has_changes != '0' }}
         run: |
           git config --local user.name "Github Actions"
           git config --local user.email "action@github.com"
           git add .
-          git status
-          git commit -m "Update submodule"
-        if: ${{ steps.status.outputs.status }}
-
-      - name: Create Branch
-        run: |
-          BRANCH_NAME="article-update-$(date +%Y%m%d-%H%M%S)"
-          git checkout -b $BRANCH_NAME
-          git push origin $BRANCH_NAME
-          echo "BRANCH_NAME=$BRANCH_NAME" >> $GITHUB_ENV
+          git commit -m "Update submodule: ${{ github.event.client_payload.commit_message }}"
 
       - name: Push
+        if: ${{ steps.status.outputs.has_changes != '0' }}
         uses: ad-m/github-push-action@master
         with:
           branch: ${{ env.BRANCH_NAME }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
-        if: ${{ steps.status.outputs.status }}
 
       - name: Check PullRequest Exists
+        if: ${{ steps.status.outputs.has_changes != '0' }}
         id: check_pr
         run: |
           echo "count=$(gh pr list -S '記事更新'in:title -s open | wc -l)" >> "$GITHUB_OUTPUT"
-        if: ${{ steps.status.outputs.status }}
 
       - name: Create Release Pull Request
-        if: ${{ steps.check_pr.outputs.count == 0 }}
+        if: ${{ steps.status.outputs.has_changes != '0' && steps.check_pr.outputs.count == '0' }}
         run: |
           gh pr create \
             --base main \
             --head ${{ env.BRANCH_NAME }} \
             --title "記事更新: ${{ github.event.client_payload.commit_message }}" \
-            --body "自動生成されたPRです。" \
-        if: ${{ steps.status.outputs.status }}
-
+            --body "## 更新内容
+            ${{ github.event.client_payload.commit_message }}
+            
+            自動生成されたPRです。" \
+            --label "article-update"
 
       - name: Edit Release Pull Request
-        if: ${{ steps.check_pr.outputs.count != 0 }}
+        if: ${{ steps.status.outputs.has_changes != '0' && steps.check_pr.outputs.count != '0' }}
         run: |
           PR_NUMBER=$(gh pr list -S '記事更新'in:title -s open --json number -q '.[0].number')
           CURRENT_TITLE=$(gh pr view $PR_NUMBER --json title -q '.title')
-          
           NEW_TITLE="${CURRENT_TITLE} / ${{ github.event.client_payload.commit_message }}"
           
           gh pr edit $PR_NUMBER \
             --title "$NEW_TITLE"
-        if: ${{ steps.status.outputs.status }}
