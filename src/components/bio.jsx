@@ -35,7 +35,7 @@ const Bio = () => {
   const social = data.site.siteMetadata?.social
 
   return (
-    <div className="side-card text-center stycky">
+    <div className="side-card text-center sticky">
       <StaticImage
         className="icon"
         layout="fixed"
@@ -46,7 +46,11 @@ const Bio = () => {
         quality={95}
         alt="Profile picture"
       />
-      <h3 className="name url"><a href="https://lovelovetrb.com/" target="_blank" rel="noopener noreferrer">{author.name}</a></h3>
+      <h3 className="name url">
+        <a href="https://lovelovetrb.com/" target="_blank" rel="noopener noreferrer">
+          {author.name}
+        </a>
+      </h3>
       <p className="textarea">{author?.summary || null}</p>
       <hr style={{ margin: '10px' }} />
       <h4>Contact Me!</h4>
