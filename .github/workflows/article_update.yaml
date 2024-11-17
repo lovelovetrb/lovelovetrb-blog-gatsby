@@ -6,31 +6,41 @@ on:
 jobs:
   update_article:
     runs-on: ubuntu-latest
-
     env:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
+    
     steps:
       - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # 全履歴を取得
+
+      - name: Create Branch
+        run: |
+          BRANCH_NAME="article-update-$(date +%Y%m%d-%H%M%S)"
+          git checkout -b $BRANCH_NAME
+          git push origin $BRANCH_NAME
+          echo "BRANCH_NAME=$BRANCH_NAME" >> $GITHUB_ENV
+
       - name: Check PullRequest Exists
         id: check_pr
         run: |
-            echo "count=$(gh pr list -S '記事更新'in:title | wc -l)" >> "$GITHUB_OUTPUT"
+          echo "count=$(gh pr list -S '記事更新'in:title -s open | wc -l)" >> "$GITHUB_OUTPUT"
+
       - name: Create Release Pull Request
         if: ${{ steps.check_pr.outputs.count == 0 }}
         run: |
           gh pr create \
-            --title '記事更新: ${{ github.event.client_payload.commit_message }}' \
-            --body '' \
             --base main \
+            --head ${{ env.BRANCH_NAME }} \
+            --title "記事更新: ${{ github.event.client_payload.commit_message }}" \
+            --body "自動生成されたPRです。" \
       - name: Edit Release Pull Request
         if: ${{ steps.check_pr.outputs.count != 0 }}
         run: |
-          pr_data=$(gh pr list -S '記事更新'in:title \
-            --json "title" \
-            | jq -c .[])
-          TITLE="$(echo $pr_data | jq -r '.title')"
-          echo $TITLE
-          gh pr edit  ${{ github.ref_name }} \
-            -t "${TITLE} / ${{ github.event.client_payload.commit_message }}"
+          PR_NUMBER=$(gh pr list -S '記事更新'in:title -s open --json number -q '.[0].number')
+          CURRENT_TITLE=$(gh pr view $PR_NUMBER --json title -q '.title')
           
+          NEW_TITLE="${CURRENT_TITLE} / ${{ github.event.client_payload.commit_message }}"
+          
+          gh pr edit $PR_NUMBER \
+            --title "$NEW_TITLE"
