@@ -41,6 +41,7 @@
     "typeface-montserrat": "1.1.13"
   },
   "devDependencies": {
+    "@biomejs/biome": "1.9.4",
     "prettier": "^2.8.8"
   },
   "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
