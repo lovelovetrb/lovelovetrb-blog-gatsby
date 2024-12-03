@@ -1,42 +1,42 @@
-import React from "react"
+import React from "react";
 
-import Layout from "/src/components/layout"
-import Seo from "/src/components/seo"
+import Layout from "/src/components/layout";
+import Seo from "/src/components/seo";
 
 // Components
-import { Link, graphql } from "gatsby"
+import { Link, graphql } from "gatsby";
 
 const TagsPage = ({
-  data: {
-    allMarkdownRemark: { group },
-    site: {
-      siteMetadata: { title },
-    },
-  },
-  location,
-  pageContext,
+	data: {
+		allMarkdownRemark: { group },
+		site: {
+			siteMetadata: { title },
+		},
+	},
+	location,
+	pageContext,
 }) => {
-  return (
-    <Layout location={location} title={title}>
-      <div className="content">
-        <h1 className="tag-header">Tags</h1>
-        <ul className="tag-list">
-          {group.map(tag => (
-            <li key={tag.fieldValue}>
-              <Link to={`/tags/${tag.fieldValue}/`}>
-                #{tag.fieldValue} ({tag.totalCount})
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </Layout>
-  )
-}
+	return (
+		<Layout location={location} title={title}>
+			<div className="content">
+				<h1 className="tag-header">Tags</h1>
+				<ul className="tag-list">
+					{group.map((tag) => (
+						<li key={tag.fieldValue}>
+							<Link to={`/tags/${tag.fieldValue}/`}>
+								#{tag.fieldValue} ({tag.totalCount})
+							</Link>
+						</li>
+					))}
+				</ul>
+			</div>
+		</Layout>
+	);
+};
 
-export default TagsPage
+export default TagsPage;
 
-export const Head = () => <Seo title="tags" />
+export const Head = () => <Seo title="tags" />;
 
 export const pageQuery = graphql`
   query {
@@ -55,4 +55,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

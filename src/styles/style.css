@@ -1,311 +1,311 @@
-@charset 'UTF-8';
+@charset "UTF-8";
 
 /*
 COMMON
 ================================================ */
 :root {
-  --background: #d8eefe;
-  --background-dark: #000000;
-  --main-background: #1b73a5;
-  --paragraph: #434d57;
-  --button: rgb(27, 115, 165);
-  --button-text: #fffffe;
-  --text-color: #fffffe;
-  --accent-color: rgb(252, 140, 138);
+	--background: #d8eefe;
+	--background-dark: #000000;
+	--main-background: #1b73a5;
+	--paragraph: #434d57;
+	--button: rgb(27, 115, 165);
+	--button-text: #fffffe;
+	--text-color: #fffffe;
+	--accent-color: rgb(252, 140, 138);
 }
 
 html {
-  font-size: 100%;
-  height: auto;
-  scroll-behavior: smooth;
+	font-size: 100%;
+	height: auto;
+	scroll-behavior: smooth;
 }
 
 h1 {
-  font-size: 2rem;
+	font-size: 2rem;
 }
 
 h2 {
-  font-size: 1.5rem;
+	font-size: 1.5rem;
 }
 
 h3 {
-  font-size: 1.3rem;
+	font-size: 1.3rem;
 }
 
 h4 {
-  font-size: 1.1rem;
+	font-size: 1.1rem;
 }
 
 p {
-  font-size: 1rem;
+	font-size: 1rem;
 }
 
 ol {
-  list-style: none;
+	list-style: none;
 }
 
 li {
-  font-size: 1rem;
+	font-size: 1rem;
 }
 
 i {
-  cursor: pointer;
+	cursor: pointer;
 }
 
 hr {
-  margin: 2rem 0;
-  color: var(--paragraph);
+	margin: 2rem 0;
+	color: var(--paragraph);
 }
 
 .shere-btn-desktop {
-  font-size: 35px;
-  color: var(--button);
-  position: fixed;
-  display: flex;
-  flex-direction: column;
-  top: 40vh;
-  left: 10px;
+	font-size: 35px;
+	color: var(--button);
+	position: fixed;
+	display: flex;
+	flex-direction: column;
+	top: 40vh;
+	left: 10px;
 }
 
 .shere-btn-desktop i {
-  padding: 0.5rem 0;
+	padding: 0.5rem 0;
 }
 
 .share-btn-mobile {
-  margin-top: 1rem;
-  padding: 0.5rem;
-  width: 80%;
-  border: 3px solid var(--accent-color);
-  background-color: rgba(252, 140, 138, 0.15);
-  border-radius: 10px;
+	margin-top: 1rem;
+	padding: 0.5rem;
+	width: 80%;
+	border: 3px solid var(--accent-color);
+	background-color: rgba(252, 140, 138, 0.15);
+	border-radius: 10px;
 }
 
 .file::after {
-  content: "\f15c";
-  font-family: "Font Awesome 6 Free";
-  font-weight: 900;
-  font-size: 13px;
-  padding-left: 3px;
+	content: "\f15c";
+	font-family: "Font Awesome 6 Free";
+	font-weight: 900;
+	font-size: 13px;
+	padding-left: 3px;
 }
 
 .tag {
-  font-family: "Silkscreen", cursive;
-  font-size: 130%;
+	font-family: "Silkscreen", cursive;
+	font-size: 130%;
 }
 
 body {
-  font-family: "Noto Sans JP";
-  background-color: var(--background);
-  color: var(--paragraph);
-  width: 100vw;
-  height: 100vh;
+	font-family: "Noto Sans JP";
+	background-color: var(--background);
+	color: var(--paragraph);
+	width: 100vw;
+	height: 100vh;
 }
 
 .global-wrapper {
-  min-height: 100vh;
+	min-height: 100vh;
 }
 
 .container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
 }
 
 #gotop {
-  font-size: 1.5rem;
-  color: var(--paragraph);
-  position: fixed;
-  bottom: 50px;
-  right: 50px;
-  z-index: 50;
+	font-size: 1.5rem;
+	color: var(--paragraph);
+	position: fixed;
+	bottom: 50px;
+	right: 50px;
+	z-index: 50;
 }
 
 .mobile {
-  display: none;
+	display: none;
 }
 
 /*
 HEADER
 ================================================ */
 header {
-  color: var(--text-color);
-  font-family: "Silkscreen", cursive;
-  background-color: var(--main-background);
-  margin-bottom: 40px;
-  border-bottom-left-radius: 40px;
-  border-bottom-right-radius: 40px;
-  box-shadow: 0 20px 0 -10px rgb(105, 171, 209),
-    0 40px 0 -20px rgb(198, 224, 231);
+	color: var(--text-color);
+	font-family: "Silkscreen", cursive;
+	background-color: var(--main-background);
+	margin-bottom: 40px;
+	border-bottom-left-radius: 40px;
+	border-bottom-right-radius: 40px;
+	box-shadow: 0 20px 0 -10px rgb(105, 171, 209), 0 40px 0 -20px
+		rgb(198, 224, 231);
 }
 
 .title {
-  padding-top: 20px;
-  text-align: center;
+	padding-top: 20px;
+	text-align: center;
 }
 
 .title h1 {
-  font-size: 2rem;
+	font-size: 2rem;
 }
 
 .navbar ul {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
 .navbar-nav li {
-  font-size: 1rem;
+	font-size: 1rem;
 }
 
 .navbar {
-  margin: 1rem auto;
-  max-width: 85%;
+	margin: 1rem auto;
+	max-width: 85%;
 }
 
 .nav-item {
-  margin: 1rem 0;
+	margin: 1rem 0;
 }
 
 /*
 MAIN
 ================================================ */
 main {
-  min-width: 60vw;
-  width: 60vw;
-  background-color: var(--main-background);
-  height: 100%;
-  padding: 1rem;
-  border-radius: 20px;
+	min-width: 60vw;
+	width: 60vw;
+	background-color: var(--main-background);
+	height: 100%;
+	padding: 1rem;
+	border-radius: 20px;
 }
 
 .article_list {
-  display: -webkit-flex;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+	display: -webkit-flex;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 }
 
 /*
 POST CARD
 ================================================ */
 .card_tag {
-  font-family: "Silkscreen", cursive;
-  position: absolute;
-  text-align: center;
-  color: #fff;
-  padding: 5px 15px;
-  background-color: rgba(80, 80, 80, 0.5);
-  transform: rotate(-4deg);
+	font-family: "Silkscreen", cursive;
+	position: absolute;
+	text-align: center;
+	color: #fff;
+	padding: 5px 15px;
+	background-color: rgba(80, 80, 80, 0.5);
+	transform: rotate(-4deg);
 }
 
 .card {
-  margin: 1rem;
-  background-color: #fff;
-  border-radius: 15px;
-  padding: 2rem;
-  align-items: center;
-  width: calc(85% / 2);
+	margin: 1rem;
+	background-color: #fff;
+	border-radius: 15px;
+	padding: 2rem;
+	align-items: center;
+	width: calc(85% / 2);
 }
 
 @media (max-width: 480px) {
-  .card {
-    padding: 1rem;
-  }
+	.card {
+		padding: 1rem;
+	}
 }
 
 .card_text {
-  overflow-wrap: break-word;
+	overflow-wrap: break-word;
 }
 
 .card_article_title {
-  margin: 0 auto;
-  vertical-align: middle;
-  line-height: 160%;
-  padding: 1rem 0 0.5rem 0;
+	margin: 0 auto;
+	vertical-align: middle;
+	line-height: 160%;
+	padding: 1rem 0 0.5rem 0;
 }
 
 .card_article_text {
-  font-size: 90%;
+	font-size: 90%;
 }
 
 .icon {
-  height: 25%;
+	height: 25%;
 }
 
 /*
 ASIDE
 ================================================ */
 aside {
-  min-width: 20vw;
-  width: 20vw;
+	min-width: 20vw;
+	width: 20vw;
 }
 
 .sticky {
-  position: -webkit-sticky;
-  position: sticky;
-  /*固定したい位置*/
-  top: 20px;
+	position: -webkit-sticky;
+	position: sticky;
+	/*固定したい位置*/
+	top: 20px;
 }
 
 .side-card {
-  margin-left: 30px;
-  margin-bottom: 1rem;
-  min-width: 18vw;
-  width: 18vw;
-  background-color: #fffffe;
-  border-radius: 20px;
-  padding: 1rem;
+	margin-left: 30px;
+	margin-bottom: 1rem;
+	min-width: 18vw;
+	width: 18vw;
+	background-color: #fffffe;
+	border-radius: 20px;
+	padding: 1rem;
 }
 
 .text-center {
-  text-align: center;
+	text-align: center;
 }
 
 .icon {
-  border-radius: calc(15vw / 3);
-  margin: 20px auto;
+	border-radius: calc(15vw / 3);
+	margin: 20px auto;
 }
 
 .name {
-  font-size: 1.5em;
-  font-family: "Silkscreen", cursive;
-  padding-bottom: 10px;
+	font-size: 1.5em;
+	font-family: "Silkscreen", cursive;
+	padding-bottom: 10px;
 }
 
 .textarea {
-  display: block;
-  margin: 0 auto;
-  overflow-wrap: break-word;
-  width: 80%;
-  font-size: 1em;
-  line-height: 1.5rem;
+	display: block;
+	margin: 0 auto;
+	overflow-wrap: break-word;
+	width: 80%;
+	font-size: 1em;
+	line-height: 1.5rem;
 }
 
 .table-contents-title {
-  padding: 0 2rem 1rem;
-  text-align: center;
+	padding: 0 2rem 1rem;
+	text-align: center;
 }
 
 .table-contents {
-  list-style-type: decimal;
-  padding-left: 2rem;
+	list-style-type: decimal;
+	padding-left: 2rem;
 }
 
 /*
 FOOTER
 ================================================ */
 footer {
-  font-family: "Silkscreen", cursive;
-  color: var(--text-color);
-  position: sticky;
-  top: 100vh;
-  width: 100vw;
-  background-color: var(--main-background);
-  border-radius: 40px 40px 0 0;
-  padding-bottom: 30px;
-  margin-top: 40px;
+	font-family: "Silkscreen", cursive;
+	color: var(--text-color);
+	position: sticky;
+	top: 100vh;
+	width: 100vw;
+	background-color: var(--main-background);
+	border-radius: 40px 40px 0 0;
+	padding-bottom: 30px;
+	margin-top: 40px;
 }
 
 .copyright {
-  text-align: center;
+	text-align: center;
 }

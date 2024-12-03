@@ -1,177 +1,177 @@
 .breadcrumb {
-  color: var(--text-color);
-  font-family: "Silkscreen", cursive;
+	color: var(--text-color);
+	font-family: "Silkscreen", cursive;
 }
 
 .breadcrumb ol {
-  align-items: center;
-  margin-bottom: 0.5rem !important;
+	align-items: center;
+	margin-bottom: 0.5rem !important;
 }
 
 .content {
-  border-radius: 20px;
-  background-color: var(--text-color);
-  color: var(--paragrah);
-  padding: 1rem 3rem 3rem;
-  font-weight: 400;
+	border-radius: 20px;
+	background-color: var(--text-color);
+	color: var(--paragrah);
+	padding: 1rem 3rem 3rem;
+	font-weight: 400;
 }
 
 .article-data {
-  display: flex;
-  justify-content: space-between;
-  padding-bottom: 1rem;
+	display: flex;
+	justify-content: space-between;
+	padding-bottom: 1rem;
 }
 
 .article-data p {
-  font-size: 17px;
-  margin-left: 5px;
-  margin-right: 10px;
+	font-size: 17px;
+	margin-left: 5px;
+	margin-right: 10px;
 }
 
 .article-data-publish-time {
-  display: flex;
-  align-items: flex-end;
+	display: flex;
+	align-items: flex-end;
 }
 
 .article-title {
-  text-align: center;
-  margin: 2rem 0;
+	text-align: center;
+	margin: 2rem 0;
 }
 
 .article-title h2 {
-  font-size: 30px;
-  line-height: 150%;
+	font-size: 30px;
+	line-height: 150%;
 }
 
 /*
  SENTENCE
 ================================================ */
 .sentence h2 {
-  color: var(--paragraph);
-  font-weight: 500;
-  border-bottom: solid 3px var(--main-background); /*下線*/
-  margin-top: 1.5em;
-  margin-bottom: 0.3em;
-  padding: 0.3em; /*上下の余白*/
+	color: var(--paragraph);
+	font-weight: 500;
+	border-bottom: solid 3px var(--main-background); /*下線*/
+	margin-top: 1.5em;
+	margin-bottom: 0.3em;
+	padding: 0.3em; /*上下の余白*/
 }
 
 .sentence h3 {
-  color: var(--paragraph);
-  /*background: transparent; /*背景透明に*/
-  /*border-bottom: solid 3px var(--main-background); /*下線*/
-  font-weight: 500;
-  font-size: 1.3em;
-  margin-top: 1.5em;
-  margin-bottom: 0.5em;
-  padding: 0.3em; /*上下 左右の余白*/
+	color: var(--paragraph);
+	/*background: transparent; /*背景透明に*/
+	/*border-bottom: solid 3px var(--main-background); /*下線*/
+	font-weight: 500;
+	font-size: 1.3em;
+	margin-top: 1.5em;
+	margin-bottom: 0.5em;
+	padding: 0.3em; /*上下 左右の余白*/
 }
 
 .sentence h4 {
-  /*border-bottom: solid 3px var(--main-background);*/
-  font-size: 1.2em;
-  font-weight: 500;
-  margin-top: 1.5em;
-  margin-bottom: 1em;
-  padding: 0.3em 0;
+	/*border-bottom: solid 3px var(--main-background);*/
+	font-size: 1.2em;
+	font-weight: 500;
+	margin-top: 1.5em;
+	margin-bottom: 1em;
+	padding: 0.3em 0;
 }
 
 .sentence {
-  line-height: 2.2;
-  margin-top: 3rem;
-  overflow-wrap: break-word;
+	line-height: 2.2;
+	margin-top: 3rem;
+	overflow-wrap: break-word;
 }
 
 .sentence p {
-  font-size: 1.1rem;
-  margin: 0.5rem;
+	font-size: 1.1rem;
+	margin: 0.5rem;
 }
 
 .sentence p + p {
-  margin-top: 1.75em;
+	margin-top: 1.75em;
 }
 
 .sentence > p {
-  white-space: pre-wrap;
+	white-space: pre-wrap;
 }
 
 .sentence > p * {
-  white-space: normal;
+	white-space: normal;
 }
 
 .sentence blockquote {
-  margin: 1em 0;
-  font-weight: 400;
-  color: var(--paragrah); /*文字色*/
-  border: solid 3px #6091d3; /*線*/
-  border-radius: 10px; /*角の丸み*/
+	margin: 1em 0;
+	font-weight: 400;
+	color: var(--paragrah); /*文字色*/
+	border: solid 3px #6091d3; /*線*/
+	border-radius: 10px; /*角の丸み*/
 }
 
 .sentence ul {
-  margin: 0.5rem;
-  border-radius: 10px;
-  list-style: inside;
+	margin: 0.5rem;
+	border-radius: 10px;
+	list-style: inside;
 }
 
 .sentence li {
-  padding: 0.5rem 1.5rem;
+	padding: 0.5rem 1.5rem;
 }
 
 .sentence li::marker {
-  color: var(--accent-color);
-  content: "✔";
-  margin: 30px;
-  padding: 30px;
+	color: var(--accent-color);
+	content: "✔";
+	margin: 30px;
+	padding: 30px;
 }
 
 .sentence strong {
-  font-weight: 400;
+	font-weight: 400;
 }
 
 .sentence a {
-  padding-bottom: 1px; /* 線の下に余白を設定 */
-  margin-inline: 0.5rem;
-  font-weight: 400;
-  color: var(--main-background);
-  text-decoration: none; /* デフォルトの下線を非表示にする */
-  background-image: linear-gradient(
-    90deg,
-    var(--main-background),
-    var(--main-background)
-  ); /* 線の色 */
-  background-repeat: no-repeat;
-  background-position: left bottom; /* 線の起点を左・下に設定 */
-  background-size: 0 1px; /* 線の横幅を0、縦幅を1pxに */
-  transition: background-size 0.6s; /* 線を伸ばすアニメーション実行時間を指定 */
+	padding-bottom: 1px; /* 線の下に余白を設定 */
+	margin-inline: 0.5rem;
+	font-weight: 400;
+	color: var(--main-background);
+	text-decoration: none; /* デフォルトの下線を非表示にする */
+	background-image: linear-gradient(
+		90deg,
+		var(--main-background),
+		var(--main-background)
+	); /* 線の色 */
+	background-repeat: no-repeat;
+	background-position: left bottom; /* 線の起点を左・下に設定 */
+	background-size: 0 1px; /* 線の横幅を0、縦幅を1pxに */
+	transition: background-size 0.6s; /* 線を伸ばすアニメーション実行時間を指定 */
 }
 
 .sentence a:hover {
-  background-size: 100% 1px; /* 線の横幅を100%にする */
+	background-size: 100% 1px; /* 線の横幅を100%にする */
 }
 
 .previous-post,
 .next-post {
-  margin: 0.5rem 0;
-  width: 100%;
+	margin: 0.5rem 0;
+	width: 100%;
 }
 
 .previous-post p {
-  text-align: left;
+	text-align: left;
 }
 
 .next-post p {
-  text-align: right;
+	text-align: right;
 }
 
 @media (max-device-width: 1366px) {
-  .article-title h2 {
-    font-size: 1.2rem;
-  }
+	.article-title h2 {
+		font-size: 1.2rem;
+	}
 
-  .sentence ul {
-    margin: 0.5rem;
-  }
+	.sentence ul {
+		margin: 0.5rem;
+	}
 
-  .sentence blockquote {
-    font-weight: 400;
-  }
+	.sentence blockquote {
+		font-weight: 400;
+	}
 }
