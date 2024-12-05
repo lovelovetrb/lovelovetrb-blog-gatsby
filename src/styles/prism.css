@@ -1,7 +1,6 @@
 .gatsby-code-title {
   background: rgba(74, 150, 204, 0.3);
   color: var(--paragraph);
-  font-family: "Ubuntu Mono";
   margin: 20px 0px -24px;
   padding: 8px 1rem 20px;
   line-height: 1rem;
@@ -10,6 +9,7 @@
 }
 
 .gatsby-highlight {
+  font-family: "Ubuntu Mono";
   margin: 1.5rem 0;
 }
 
@@ -23,4 +23,14 @@
 
 .gatsby-code-title + .gatsby-highlight {
   margin-top: 0;
+}
+
+@media (max-device-width: 1366px) {
+  .gatsby-highlight {
+    font-size: 12px;
+  }
+
+  :not(pre) > code[class*="language-"] {
+    font-size: 11px;
+  }
 }

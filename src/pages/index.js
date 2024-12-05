@@ -30,7 +30,7 @@ const BlogIndex = ({ data, location }) => {
               <Link to={post.fields.slug} itemProp="url">
                 <Eyecatch place={"list"} color={color} icon={icon} />
                 <div class="card_text">
-                  <h4 class="card_article_title">{title}</h4>
+                  <h2 class="card_article_title">{title}</h2>
                   <p
                     className="card_article_text"
                     dangerouslySetInnerHTML={{
