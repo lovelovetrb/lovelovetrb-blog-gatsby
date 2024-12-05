@@ -164,14 +164,45 @@
 
 @media (max-device-width: 1366px) {
   .article-title h2 {
-    font-size: 1.2rem;
+    font-size: 16px;
+  }
+
+  .article-data {
+    font-size: 12px;
+    padding-bottom: 0;
+  }
+
+  .article-data p {
+    font-size: 12px;
+  }
+
+  .sentence h2 {
+    font-size: 16px;
+  }
+
+  .sentence h3 {
+    font-size: 14px;
   }
 
   .sentence ul {
     margin: 0.5rem;
   }
 
+  .sentence li {
+    padding: 3px 0;
+    font-size: 12px;
+  }
+
+  .sentence p {
+    font-size: 12px;
+  }
+
   .sentence blockquote {
     font-weight: 400;
+  }
+
+  .previous-post p,
+  .next-post p {
+    font-size: 12px;
   }
 }
