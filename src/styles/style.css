@@ -218,6 +218,7 @@ POST CARD
 }
 
 .card_article_title {
+  font-size: 20px;
   margin: 0 auto;
   vertical-align: middle;
   line-height: 160%;

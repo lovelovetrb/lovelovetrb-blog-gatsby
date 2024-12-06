@@ -14,9 +14,8 @@ import { faTag } from "@fortawesome/free-solid-svg-icons"
 const tagPage = ({ pageContext, data, location }) => {
   const { tag } = pageContext
   const { edges, totalCount } = data.allMarkdownRemark
-  const tagHeader = `${totalCount} post${
-    totalCount === 1 ? "" : "s"
-  } tagged with "#${tag}"`
+  const tagHeader = `${totalCount} post${totalCount === 1 ? "" : "s"
+    } tagged with "#${tag}"`
   const siteTitle = data.site.siteMetadata?.title || `Title`
 
   return (
@@ -37,6 +36,7 @@ const tagPage = ({ pageContext, data, location }) => {
                   <div class="card_text">
                     <h3 class="card_article_title">{title}</h3>
                     <p
+                      className="card_article_text"
                       dangerouslySetInnerHTML={{
                         __html: description,
                       }}
