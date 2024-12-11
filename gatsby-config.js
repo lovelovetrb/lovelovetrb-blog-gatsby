@@ -19,7 +19,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-google-tagmanager",
       options: {
-        id: [process.env.GATSBY_TRACKING_ID || ""],
+        id: process.env.GATSBY_TRACKING_ID || "",
       },
     },
     {
